@@ -6,7 +6,7 @@ using UnityEngine;
 public class WriteToUI : MonoBehaviour
 {
 
-
+    [SerializeField] private TextMeshProUGUI textAboveCat;
     private TextMeshProUGUI textUI;
     private string text;
 
@@ -22,6 +22,7 @@ public class WriteToUI : MonoBehaviour
     private string wordForPlatforms;
 
     [SerializeField] private ReadInput catInput;
+    [SerializeField] private CatState catState;
 
     void OnGUI()
     {
@@ -103,7 +104,8 @@ public class WriteToUI : MonoBehaviour
 
             typeSounds.PlayDingSound();
 
-            catInput.GetInput(text);
+            //catInput.GetInput(text);
+            catState.CheckInput(text);
 
             wordForPlatforms = text;
 
@@ -114,6 +116,7 @@ public class WriteToUI : MonoBehaviour
         }
 
         textUI.text = text;
+        textAboveCat.text = text;
     }
 
     public string GetWord() => wordForPlatforms;

@@ -4,40 +4,57 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
-
+using static TMPro.Examples.ObjectSpin;
 
 public enum ActionWord
 {
-    Right,
-    Left,
-    Jump,
-    Interact,
+    right,
+    left,
+    jump,
+    interact,
 }
 
-public enum ActionType
+[System.Serializable]
+public class ActionTypeEvent : UnityEngine.Events.UnityEvent<ActionWord> { }
+
+
+[Serializable]
+public class PathPoint
 {
-    Movement,
-    Interaction,
+    public bool activateDependentDecisions = false;
+    public AnimationClip animation;
+    public Transform point;
+    public bool hasEvent;
+    public UnityEvent onReachPoint;
 }
 
 [Serializable]
-public struct Decision
+public class Decision
 {
+    public bool active = true;
+    public ActionPoint nextActionPoint;
     public ActionWord action;
-    public ActionType actionType;
 
-    public Transform[] path;
+    public DependentDecision[] dependentDecisions;
 
-    [ShowIf("actionType", ActionType.Interaction)]
-    public UnityEvent interaction;
+    [ReorderableList]
+    public PathPoint[] path;
 
 }
 
-    public class ActionPoint : MonoBehaviour
+[Serializable]
+public class DependentDecision
+{
+    public ActionPoint actionPoint;
+    public ActionWord action;
+}
+
+public class ActionPoint : MonoBehaviour
 {
 
     [Header("Action Point")]
     [SerializeField] private Decision[] possibleActions;
+    public Decision[] PossibleActions => possibleActions;
 
     // Start is called before the first frame update
     void Start()
@@ -65,4 +82,17 @@ public struct Decision
         Gizmos.color = Color.green;
         Gizmos.DrawCube(transform.position, new Vector3(lineWidth, lineWidth, lineWidth));
     }
+
+    public void ActivateInteraction(ActionWord action)
+    {
+
+        foreach (Decision decision in possibleActions)
+        {
+            if (!decision.active && decision.action == action)
+            {
+                decision.active = true;
+            }
+        }
+    }
+
 }
