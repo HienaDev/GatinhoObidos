@@ -386,6 +386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112694712}
+  - component: {fileID: 112694713}
   m_Layer: 0
   m_Name: Interactables
   m_TagString: Untagged
@@ -409,6 +410,21 @@ Transform:
   - {fileID: 306390104}
   m_Father: {fileID: 1457068742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112694713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112694711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 1, g: 0.015686274, b: 0.7776598, a: 1}
+  pointColor: {r: 1, g: 0.6377755, b: 0, a: 1}
+  pointRadius: 0.2
 --- !u!1001 &130252499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1087,6 +1103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426086835}
+  - component: {fileID: 426086836}
   m_Layer: 0
   m_Name: Left - Path
   m_TagString: Untagged
@@ -1113,6 +1130,21 @@ Transform:
   - {fileID: 1720698471}
   m_Father: {fileID: 1457068742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &426086836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426086834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 0.09125469, g: 1, b: 0.015686274, a: 1}
+  pointColor: {r: 0.04032612, g: 0, b: 1, a: 1}
+  pointRadius: 0.2
 --- !u!1 &434010716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,6 +2346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 876379918}
+  - component: {fileID: 876379919}
   m_Layer: 0
   m_Name: Left - Path
   m_TagString: Untagged
@@ -2337,6 +2370,21 @@ Transform:
   - {fileID: 514443001}
   m_Father: {fileID: 1326588895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876379919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876379917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 0.18499732, g: 1, b: 0.015686274, a: 1}
+  pointColor: {r: 0.040711403, g: 0, b: 1, a: 1}
+  pointRadius: 0.2
 --- !u!1 &910236197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967223649}
+  - component: {fileID: 967223650}
   m_Layer: 0
   m_Name: Right - Path
   m_TagString: Untagged
@@ -2475,6 +2524,21 @@ Transform:
   - {fileID: 165476459}
   m_Father: {fileID: 1457068742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967223650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967223648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pointColor: {r: 1, g: 0, b: 0, a: 1}
+  pointRadius: 0.2
 --- !u!1 &968013456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062694031}
+  - component: {fileID: 1062694032}
   m_Layer: 0
   m_Name: Right - Path
   m_TagString: Untagged
@@ -2699,6 +2764,21 @@ Transform:
   - {fileID: 54360803}
   m_Father: {fileID: 1326588895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062694032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062694030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pointColor: {r: 1, g: 0, b: 0, a: 1}
+  pointRadius: 0.2
 --- !u!1 &1140649696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,6 +3898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523941889}
+  - component: {fileID: 1523941890}
   m_Layer: 0
   m_Name: Right - Path
   m_TagString: Untagged
@@ -3841,6 +3922,21 @@ Transform:
   - {fileID: 1745241774}
   m_Father: {fileID: 160149381}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1523941890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523941888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e558bf4664200624a87a893144feed12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pointColor: {r: 1, g: 0, b: 0, a: 1}
+  pointRadius: 0.2
 --- !u!1 &1551573647
 GameObject:
   m_ObjectHideFlags: 0
