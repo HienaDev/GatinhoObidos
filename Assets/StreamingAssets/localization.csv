@@ -1,8 +1,8 @@
-word,Portuguese,English,Spanish
-jump,salta,jump,salta
-right,direita,right,derecha
-left,esquerda,left,izquierda
-interact,interagir,interact,interactuar
-tutorial_direita,"Neste jogo você controla o gato escrevendo sua história, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'."
-menu_language,Idioma,Language,Idioma
-settings,Definições,Settings,Definiciones
+word,Portugues,English,Espanol,Francais
+jump,salta,jump,salta,saut
+right,direita,right,derecha,droite
+left,esquerda,left,izquierda,gauche
+interact,interagir,interact,interactuar,interagir
+tutorial_direita,"Neste jogo você controla o gato escrevendo sua história, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous contrôlez le chat en écrivant son histoire, essayez de taper 'droite'."
+menu_language,Idioma,Language,Idioma,Langue
+settings,Definições,Settings,Definiciones,Définitions

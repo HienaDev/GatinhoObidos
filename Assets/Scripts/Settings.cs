@@ -142,9 +142,9 @@ public class Settings : MonoBehaviour
         }
 
         Debug.Log("Dictionary built!");
-        Debug.Log("Portuguese[right] = " + localizedData["Portuguese"]["right"]);
+        Debug.Log("Portuguese[right] = " + localizedData["Portugues"]["right"]);
         Debug.Log("English[right] = " + localizedData["English"]["right"]);
-        Debug.Log("Spanish[right] = " + localizedData["Spanish"]["right"]);
+        Debug.Log("Spanish[right] = " + localizedData["Espanol"]["right"]);
 
         InitiateDropdown();
     }
