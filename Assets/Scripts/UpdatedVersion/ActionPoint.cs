@@ -26,6 +26,7 @@ public class ActionTypeEvent : UnityEngine.Events.UnityEvent<ActionWord> { }
 public class PathPoint
 {
     public bool activateDependentDecisions = false;
+    public float speed = 3f;
     public AnimationClip animation;
     public Transform point;
     public bool hasEvent;
@@ -38,7 +39,6 @@ public class Decision
     public bool active = true;
     public ActionPoint nextActionPoint;
     public ActionWord action;
-
     public DependentDecision[] dependentDecisions;
 
     [ReorderableList]
@@ -59,18 +59,6 @@ public class ActionPoint : MonoBehaviour
     [Header("Action Point")]
     [SerializeField] private Decision[] possibleActions;
     public Decision[] PossibleActions => possibleActions;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     [Header("Gizmos")]
     public float lineWidth = 0.2f;

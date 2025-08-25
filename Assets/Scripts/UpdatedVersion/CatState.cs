@@ -83,12 +83,6 @@ public class CatState : MonoBehaviour
         return result;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CheckInput(string input)
     {
         if (moving)
@@ -158,13 +152,18 @@ public class CatState : MonoBehaviour
             // Snap Z rotation instantly
             transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
 
-            // --- Move at constant speed ---
-            await transform.DOMove(target.position, speed)
-                           .SetSpeedBased()
+            // --- Move with speed (manual duration calculation) ---
+            float distance = Vector3.Distance(transform.position, target.position);
+            float duration = distance / Mathf.Max(0.01f, point.speed); // avoid division by zero
+
+            Debug.Log($"Distance: {distance}, Speed: {point.speed}, Duration: {duration}, Position: {transform.position} -> {target.position}");
+
+
+            await transform.DOMove(target.position, duration)
                            .SetEase(Ease.Linear)
                            .AsyncWaitForCompletion();
 
-            // Ensure 0 0 0 rotation
+            // Reset rotation back to neutral
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
             // --- Invoke UnityEvent ---
@@ -190,5 +189,6 @@ public class CatState : MonoBehaviour
         if (idleAnimation != null)
             animator.Play(idleAnimation.name);
     }
+
 
 }

@@ -12,6 +12,7 @@ public class PathPointDrawer : PropertyDrawer
         SerializedProperty activateDependentProp = property.FindPropertyRelative("activateDependentDecisions");
         SerializedProperty animationProp = property.FindPropertyRelative("animation");
         SerializedProperty transformProp = property.FindPropertyRelative("point");
+        SerializedProperty speedProp = property.FindPropertyRelative("speed");
         SerializedProperty hasEventProp = property.FindPropertyRelative("hasEvent");
         SerializedProperty eventProp = property.FindPropertyRelative("onReachPoint");
 
@@ -30,6 +31,11 @@ public class PathPointDrawer : PropertyDrawer
         // Draw Transform field
         Rect transformRect = new Rect(position.x, y, position.width, EditorGUIUtility.singleLineHeight);
         EditorGUI.PropertyField(transformRect, transformProp);
+        y += EditorGUIUtility.singleLineHeight + 2;
+
+        // Draw Speed field
+        Rect speedRect = new Rect(position.x, y, position.width, EditorGUIUtility.singleLineHeight);
+        EditorGUI.PropertyField(speedRect, speedProp);
         y += EditorGUIUtility.singleLineHeight + 2;
 
         // Draw hasEvent toggle
@@ -54,8 +60,8 @@ public class PathPointDrawer : PropertyDrawer
         SerializedProperty hasEventProp = property.FindPropertyRelative("hasEvent");
         SerializedProperty eventProp = property.FindPropertyRelative("onReachPoint");
 
-        // Base height: 3 lines (activateDependent + animation + transform + hasEvent) + spacing
-        float height = EditorGUIUtility.singleLineHeight * 4 + 6;
+        // Base height: 5 lines (activateDependent + animation + transform + speed + hasEvent) + spacing
+        float height = EditorGUIUtility.singleLineHeight * 5 + 8;
 
         if (hasEventProp.boolValue)
         {
