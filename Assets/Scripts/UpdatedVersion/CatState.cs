@@ -29,6 +29,8 @@ public class CatState : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        //PlayerPrefs.DeleteKey(PlayerPrefsKey); // Uncomment to reset unlocked actions during testing
+
         unlockedActions = LoadUnlockedActions();
 
         // If no saved actions yet, initialize defaults
@@ -37,6 +39,7 @@ public class CatState : MonoBehaviour
             unlockedActions.Add(ActionWord.right);
             unlockedActions.Add(ActionWord.left);
             unlockedActions.Add(ActionWord.sleep);
+            unlockedActions.Add(ActionWord.climb);
 
             SaveUnlockedActions(); // save defaults once
         }
