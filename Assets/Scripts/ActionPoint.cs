@@ -11,7 +11,11 @@ public enum ActionWord
     right,
     left,
     jump,
+    climb,
     interact,
+    hide,
+    scratch,
+    sleep,
 }
 
 [System.Serializable]

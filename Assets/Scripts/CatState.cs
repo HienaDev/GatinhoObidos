@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,12 +19,65 @@ public class CatState : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private List<ActionWord> unlockedActions;
+    private const string PlayerPrefsKey = "UnlockedActions";
+
     // Start is called before the first frame update
     void Start()
     {
         currentActionPoint = startingActionPoint;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        unlockedActions = LoadUnlockedActions();
+
+        // If no saved actions yet, initialize defaults
+        if (unlockedActions.Count == 0)
+        {
+            unlockedActions.Add(ActionWord.right);
+            unlockedActions.Add(ActionWord.left);
+            unlockedActions.Add(ActionWord.sleep);
+
+            SaveUnlockedActions(); // save defaults once
+        }
+    }
+
+    public void UnlockAction(ActionWord action)
+    {
+        if (!unlockedActions.Contains(action))
+        {
+            unlockedActions.Add(action);
+            SaveUnlockedActions();
+            Debug.Log("Unlocked new action: " + action);
+        }
+    }
+
+    private void SaveUnlockedActions()
+    {
+        // Convert enum list to comma-separated string
+        string data = string.Join(",", unlockedActions);
+        PlayerPrefs.SetString(PlayerPrefsKey, data);
+        PlayerPrefs.Save();
+    }
+
+    private List<ActionWord> LoadUnlockedActions()
+    {
+        List<ActionWord> result = new List<ActionWord>();
+
+        string data = PlayerPrefs.GetString(PlayerPrefsKey, "");
+        if (!string.IsNullOrEmpty(data))
+        {
+            string[] parts = data.Split(',');
+            foreach (string part in parts)
+            {
+                if (Enum.TryParse(part, out ActionWord action))
+                {
+                    result.Add(action);
+                }
+            }
+        }
+
+        return result;
     }
 
     // Update is called once per frame
@@ -45,6 +99,17 @@ public class CatState : MonoBehaviour
             Debug.LogWarning("No current action point set.");
             return;
         }
+
+        if (Enum.TryParse(input, true, out ActionWord actionWord))
+        {
+            if(!unlockedActions.Contains(actionWord))
+            {
+                Debug.LogWarning("Action not unlocked: " + actionWord);
+                return;
+            }
+        }
+        else
+            return; // Invalid action word
 
         // Check if the input matches any of the possible actions in the current action point
         foreach (Decision action in currentActionPoint.PossibleActions)

@@ -3,6 +3,9 @@ jump,salta,jump,salta,saut
 right,direita,right,derecha,droite
 left,esquerda,left,izquierda,gauche
 interact,interagir,interact,interactuar,interagir
+hide,esconder,hide,esconder,cacher
+scratch,arranhar,scratch,rascar,gratter
+sleep,dormir,sleep,dormir,dormir
 tutorial_direita,"Neste jogo você controla o gato escrevendo sua história, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous contrôlez le chat en écrivant son histoire, essayez de taper 'droite'."
 menu_language,Idioma,Language,Idioma,Langue
 settings,Definições,Settings,Definiciones,Définitions
