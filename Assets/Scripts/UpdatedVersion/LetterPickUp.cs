@@ -7,7 +7,8 @@ using UnityEngine;
 public class LetterPickUp : MonoBehaviour
 {
 
-    private char letter;
+    private ActionWord actionWord;
+    private int index;
 
     private LevelManager levelManager;
 
@@ -22,17 +23,23 @@ public class LetterPickUp : MonoBehaviour
     [SerializeField] private ParticleSystem collectEffect;
 
 
-    public void Instantiate(char letter, LevelManager levelManager, Transform targetTransform)
+
+    public void Instantiate(ActionWord actionWord, int index, LevelManager levelManager, Transform targetTransform)
     {
-        this.letter = letter;
+        this.actionWord = actionWord;
+        this.index = index;
         this.levelManager = levelManager;
         this.targetTransform = targetTransform;
 
         text = GetComponentInChildren<TextMeshProUGUI>();
 
-        text.text = letter.ToString();
+        UpdateText();
+    }
 
-
+    void UpdateText()
+    {
+        Debug.Log(actionWord.ToString() + " :Updating letter text for index: " + index );// + Settings.GetText(actionWord.ToString())[index]);
+        text.text = Settings.GetText(actionWord.ToString())[index].ToString();
     }
 
 
@@ -42,7 +49,7 @@ public class LetterPickUp : MonoBehaviour
         {
             if (levelManager != null)
             {
-                levelManager.CollectLetter(letter);
+                levelManager.CollectLetter(index);
                 PlayTween(text.transform, targetTransform);
                 collectEffect.gameObject.SetActive(true);
                 collectEffect.Play();

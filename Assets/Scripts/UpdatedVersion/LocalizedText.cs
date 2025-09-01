@@ -4,12 +4,12 @@ using System.Collections;
 
 public class LocalizedText : MonoBehaviour
 {
-    [SerializeField] private string _localizationKey;
-    private TextMeshProUGUI _textComponent;
+    [SerializeField] private string localizationKey;
+    private TextMeshProUGUI textComponent;
 
     IEnumerator Start()
     {
-        _textComponent = GetComponent<TextMeshProUGUI>();
+        textComponent = GetComponent<TextMeshProUGUI>();
         LocalizationEvents.OnLanguageChanged += UpdateText;
 
         yield return new WaitForSeconds(0.1f); // Wait for Settings to initialize
@@ -23,6 +23,6 @@ public class LocalizedText : MonoBehaviour
 
     void UpdateText()
     {
-        _textComponent.text = Settings.GetText(_localizationKey);
+        textComponent.text = Settings.GetText(localizationKey);
     }
 }

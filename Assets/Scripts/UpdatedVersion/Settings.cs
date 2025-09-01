@@ -37,7 +37,7 @@ public class Settings : MonoBehaviour
     private Dictionary<string, Dictionary<string, string>> localizedData;
     public static string GetText(string key)
     {
-
+        Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
         return instance.localizedData[instance.currentLanguage][key];
     }
 

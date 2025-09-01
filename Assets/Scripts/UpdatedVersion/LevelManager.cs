@@ -8,23 +8,46 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private ActionWord missingWord;
     [SerializeField] private int numberOfMissingLetters = 3;
-    private List<char> missingLetters;
+    private List<int> missingLetters;
     [SerializeField] private Transform[] letterPositions;
-    [SerializeField] private GameObject letterPrefab;
+    [SerializeField] private LetterPickUp letterPrefab;
     [SerializeField] private Transform letterCollectTarget; // Optional target for letters to move towards
 
+    private List<LetterPickUp> spawnedLetters = new List<LetterPickUp>();
+
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
+
+        yield return new WaitForSeconds(0.1f); // Wait for Settings to initialize
+
         if (letterPositions.Length < numberOfMissingLetters)
         {
             Debug.LogError("Not enough letter positions for the number of missing letters.");
-            return;
+            yield break;
         }
 
-        missingLetters = new List<char>();
+        for (int i = 0; i < numberOfMissingLetters; i++)
+        {
+            Transform pos = letterPositions[i];
+            LetterPickUp letterObj = Instantiate(letterPrefab, pos.position, Quaternion.identity);
+            LetterPickUp letterPickUp = letterObj.GetComponent<LetterPickUp>();
 
-        string missingWordStr = missingWord.ToString();
+            spawnedLetters.Add(letterObj);
+
+        }
+
+        UpdateLetters();
+
+        LocalizationEvents.OnLanguageChanged += UpdateLetters;
+    }
+
+    private void UpdateLetters()
+    {
+
+        missingLetters = new List<int>();
+
+        string missingWordStr = Settings.GetText(missingWord.ToString());
         List<int> availableIndices = Enumerable.Range(0, missingWordStr.Length).ToList();
 
         // Shuffle indices
@@ -34,36 +57,27 @@ public class LevelManager : MonoBehaviour
             (availableIndices[i], availableIndices[swapIndex]) = (availableIndices[swapIndex], availableIndices[i]);
         }
 
-        for (int i = 0; i < numberOfMissingLetters; i++)
+        for (int i = 0; i < spawnedLetters.Count; i++)
         {
-            Transform pos = letterPositions[i];
-            GameObject letterObj = Instantiate(letterPrefab, pos.position, Quaternion.identity);
-            LetterPickUp letterPickUp = letterObj.GetComponent<LetterPickUp>();
-
-            if (letterPickUp != null)
+            if (spawnedLetters[i] != null)
             {
                 // Use shuffled indices instead of random.Range
                 char randomLetter = missingWordStr[availableIndices[i]];
-                letterPickUp.Instantiate(randomLetter, this, letterCollectTarget);
-                missingLetters.Add(randomLetter);
-            }
-            else
-            {
-                Debug.LogError("Letter prefab does not have a LetterPickUp component.");
+                spawnedLetters[i].Instantiate(missingWord, availableIndices[i], this, letterCollectTarget);
+                missingLetters.Add(availableIndices[i]);
             }
         }
-
     }
 
-    public void CollectLetter(char letter)
+    public void CollectLetter(int index)
     {
-        if(missingLetters.Contains(letter))
+        if(missingLetters.Contains(index))
         {
-            missingLetters.Remove(letter);
+            missingLetters.Remove(index);
         }
         else
         {
-            Debug.Log($"Letter {letter} is not part of the missing word.");
+            Debug.Log($"Letter {index} is not part of the missing word.");
         }
 
         if (missingLetters.Count == 0)
