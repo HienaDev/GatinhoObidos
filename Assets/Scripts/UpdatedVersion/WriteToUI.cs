@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WriteToUI : MonoBehaviour
 {
@@ -24,6 +25,13 @@ public class WriteToUI : MonoBehaviour
     [SerializeField] private ReadInput catInput;
     [SerializeField] private CatState catState;
 
+    [SerializeField] private Image outlineUI;
+    private Color32 outlineColorDefault;
+    private Color32 outlineColorTransparent;
+    [SerializeField] private Image backgroundUI;
+    private Color32 backgroundColorDefault;
+    private Color32 backgroundColorTransparent;
+
     void OnGUI()
     {
 
@@ -35,14 +43,15 @@ public class WriteToUI : MonoBehaviour
         e.keyCode.ToString().Length == 1 &&
         char.IsLetter(e.keyCode.ToString()[0]))
         {
-            if(text.Length < 26)
+            if (text.Length < 26)
             {
                 typeSounds.PlayTypeSound();
                 rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rect.rect.width + 17.3077f);// += 17.3077f;
                 rectOutline.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectOutline.rect.width + 17.3077f);// += 17.3077f;
                 text += e.keyCode;
+
             }
-                
+
         }
 
     }
@@ -62,18 +71,23 @@ public class WriteToUI : MonoBehaviour
         defaultRectWidth = rect.rect.width;
 
         defaultRectOutlineWidth = rectOutline.rect.width;
+
+        outlineColorDefault = outlineUI.color;
+        outlineColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), 55);
+        backgroundColorDefault = backgroundUI.color;
+        backgroundColorTransparent = new Color32((byte)(backgroundUI.color.r * 255), (byte)(backgroundUI.color.g * 255), (byte)(backgroundUI.color.b * 255), 55);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         // Add Space
         if ((Input.GetKeyDown(KeyCode.Space) && text.Length < 26 && text != ""))
         {
 
-            if(text[text.Length - 1] != '_')
+            if (text[text.Length - 1] != '_')
             {
                 typeSounds.PlayTypeSound();
                 rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rect.rect.width + 17.3077f);
@@ -83,9 +97,9 @@ public class WriteToUI : MonoBehaviour
         }
 
         // Delete Char
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
-           
+
 
             if (text.Length > 0)
             {
@@ -94,12 +108,14 @@ public class WriteToUI : MonoBehaviour
 
                 typeSounds.PlayTypeSound();
                 text = text.Remove(text.Length - 1);
+
             }
-                
+
+
         }
 
         // Input text
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
 
             typeSounds.PlayDingSound();
@@ -117,6 +133,18 @@ public class WriteToUI : MonoBehaviour
 
         textUI.text = text;
         textAboveCat.text = text;
+
+        if (text.Length > 0)
+        {
+            outlineUI.color = outlineColorDefault;
+            backgroundUI.color = backgroundColorDefault;
+        }
+        else
+        {
+            outlineUI.color = outlineColorTransparent;
+            backgroundUI.color = backgroundColorTransparent;
+
+        }
     }
 
     public string GetWord() => wordForPlatforms;
