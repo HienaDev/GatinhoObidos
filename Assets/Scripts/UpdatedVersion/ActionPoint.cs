@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using NaughtyAttributes;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using static TMPro.Examples.ObjectSpin;
 
 public enum ActionWord
 {
@@ -16,6 +14,8 @@ public enum ActionWord
     hide,
     scratch,
     sleep,
+    up,
+    down,
 }
 
 [System.Serializable]
@@ -65,15 +65,18 @@ public class ActionPoint : MonoBehaviour
     public float lineHeight = 0.5f;
     public Color lineColor = Color.red;
 
-    void OnDrawGizmos()
-    {
 
-        Gizmos.color = lineColor;
-        Gizmos.DrawCube(transform.position + new Vector3(0f, lineHeight, 0f), new Vector3(lineWidth, lineHeight * 2, lineWidth));
+    [Header("Gizmos Settings")]
+    public bool drawPaths = true;
+    [Range(8, 64)] public int labelFontSize = 12;
+    [Range(8, 64)] public int actionWordFontSize = 16;
+    [Tooltip("Vertical separation between overlapping paths (in world units).")]
+    public float pathOffset = 0.25f;
+    [Tooltip("Vertical spacing between action labels.")]
+    public float labelSpacing = 0.5f;
+    [Tooltip("Extra lift for waypoint labels above markers.")]
+    public float labelVerticalOffset = 0.12f;
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawCube(transform.position, new Vector3(lineWidth, lineWidth, lineWidth));
-    }
 
     public void ActivateInteraction(ActionWord action)
     {
@@ -87,4 +90,95 @@ public class ActionPoint : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (!drawPaths) return;
+        if (possibleActions == null || possibleActions.Length == 0) return;
+
+        // Build list of active decisions
+        var activeDecisions = new System.Collections.Generic.List<Decision>();
+        foreach (var dec in possibleActions)
+        {
+            if (dec == null) continue;
+            if (!dec.active) continue;
+            if (dec.path == null || dec.path.Length == 0) continue;
+            activeDecisions.Add(dec);
+        }
+
+        int n = activeDecisions.Count;
+        if (n == 0) return;
+
+        // Draw all decisions
+        for (int idx = 0; idx < n; idx++)
+        {
+            var decision = activeDecisions[idx];
+            if (decision == null) continue;
+
+            string actionName = decision.action.ToString();
+            Color color = Color.HSVToRGB(
+                Mathf.Abs(actionName.GetHashCode() % 1000) / 1000f,
+                0.8f, 0.9f);
+
+            Handles.color = color;
+
+            // Lane index: for n=2 -> -0.5, +0.5 (centered separation)
+            float laneIndex = idx - (n - 1) * 0.5f;
+
+            // Offset straight in Y axis (2D-friendly)
+            Vector3 laneOffset = Vector3.up * (laneIndex * pathOffset);
+
+            // Draw segments: start from ActionPoint position
+            Vector3 segStart = transform.position;
+            var path = decision.path;
+
+            for (int i = 0; i < path.Length; i++)
+            {
+                var p = path[i];
+                if (p == null || p.point == null) continue;
+
+                Vector3 segEnd = p.point.position;
+
+                // Draw shifted line
+                Handles.DrawLine(segStart + laneOffset, segEnd + laneOffset);
+
+                // Sphere marker
+                float handleSize = HandleUtility.GetHandleSize(segEnd) * 0.08f;
+                Handles.SphereHandleCap(0, segEnd + laneOffset, Quaternion.identity, handleSize, EventType.Repaint);
+
+                // Waypoint label
+                GUIStyle labelStyle = new GUIStyle(EditorStyles.label);
+                labelStyle.normal.textColor = color;
+                labelStyle.fontSize = labelFontSize;
+
+                string label = $"Speed: {p.speed}";
+                if (p.animation != null) label += $"\nAnim: {p.animation.name}";
+                if (p.hasEvent) label += "\nEvent: ✓";
+
+                Vector3 labelPos = segEnd + laneOffset + Vector3.up * (handleSize + labelVerticalOffset);
+                Handles.Label(labelPos, label, labelStyle);
+
+                // Advance
+                segStart = segEnd;
+            }
+
+            // Draw action label stacked above ActionPoint
+
+                GUIStyle actionStyle = new GUIStyle(EditorStyles.boldLabel);
+                actionStyle.normal.textColor = color;
+                actionStyle.fontSize = actionWordFontSize;
+
+                float baseSize = HandleUtility.GetHandleSize(transform.position) * 0.3f;
+                Vector3 actionLabelPos = transform.position + Vector3.up * (baseSize + idx * labelSpacing);
+
+                Handles.Label(actionLabelPos, decision.action.ToString(), actionStyle);
+            
+        }
+
+        // Root marker for the ActionPoint
+        float rootSize = HandleUtility.GetHandleSize(transform.position) * 0.12f;
+        Handles.color = Color.white;
+        Handles.SphereHandleCap(0, transform.position, Quaternion.identity, rootSize, EventType.Repaint);
+    }
+#endif
 }
