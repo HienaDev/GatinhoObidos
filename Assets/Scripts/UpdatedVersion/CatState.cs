@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -28,6 +29,8 @@ public class CatState : MonoBehaviour
         currentActionPoint = startingActionPoint;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        transform.position = startingActionPoint.transform.position;
 
         //PlayerPrefs.DeleteKey(PlayerPrefsKey); // Uncomment to reset unlocked actions during testing
 
@@ -99,38 +102,62 @@ public class CatState : MonoBehaviour
             return;
         }
 
-        if (Enum.TryParse(input, true, out ActionWord actionWord))
-        {
-            if(!unlockedActions.Contains(actionWord))
-            {
-                Debug.LogWarning("Action not unlocked: " + actionWord);
-                return;
-            }
-        }
-        else
-            return; // Invalid action word
+        // Strip trailing digits from input
+        string normalizedInput = StripTrailingDigits(input);
+
+        normalizedInput.Replace("_", " "); // allow underscores as spaces
+
+        //// Try parse normalized input
+        //if (!Enum.TryParse(normalizedInput, true, out ActionWord actionWord))
+        //{
+        //    Debug.LogWarning("Invalid action word: " + normalizedInput);
+        //    return;
+        //}
+
+
 
         // Check if the input matches any of the possible actions in the current action point
         foreach (Decision action in currentActionPoint.PossibleActions)
         {
-            string actionName = action.action.ToString();
-            if (Settings.GetText(actionName).Equals(input, System.StringComparison.OrdinalIgnoreCase) && action.active)
+            string decisionName = StripTrailingDigits(action.action.ToString());
+
+            if (Settings.GetText(decisionName).Equals(normalizedInput, StringComparison.OrdinalIgnoreCase)
+                && action.active)
             {
-                Debug.Log("Found interaction: " + actionName);
+                Debug.Log("Found interaction: " + decisionName);
+
+                if (!unlockedActions.Contains(action.action))
+                {
+                    Debug.LogWarning("Action not unlocked: " + decisionName);
+                    return;
+                }
 
                 // Perform the action
                 PerformAction(action);
-
                 return;
             }
         }
+
         Debug.Log("No matching action found for input: " + input);
+    }
+
+
+
+    // Helper: removes any trailing digits from a string
+    private string StripTrailingDigits(string s)
+    {
+        if (string.IsNullOrEmpty(s)) return s;
+
+        int i = s.Length - 1;
+        while (i >= 0 && char.IsDigit(s[i])) i--;
+        return s.Substring(0, i + 1);
     }
 
 
 
     public async void PerformAction(Decision action)
     {
+        bool deactivatedActions = false;
         moving = true;
 
         for (int i = 0; i < action.path.Length; i++)
@@ -175,11 +202,27 @@ public class CatState : MonoBehaviour
             // --- Activate dependent decisions ---
             if (point.activateDependentDecisions && action.dependentDecisions != null)
             {
+                Debug.Log("Activating dependent decisions...");
                 foreach (DependentDecision dep in action.dependentDecisions)
                 {
+                    Debug.Log("Activating action: " + dep.action + " on ActionPoint: " + (dep.actionPoint != null ? dep.actionPoint.name : "null"));
                     if (dep.actionPoint != null)
                         dep.actionPoint.ActivateInteraction(dep.action);
                 }
+            }
+
+            // --- Deactivate decisions ---
+            if (action.deactivateDecisions != null && !deactivatedActions)
+            {
+                Debug.Log("Deactivating decisions..."); 
+                foreach (DependentDecision dep in action.deactivateDecisions)
+                {
+                    Debug.Log("Deactivating action: " + dep.action + " on ActionPoint: " + (dep.actionPoint != null ? dep.actionPoint.name : "null"));
+                    if (dep.actionPoint != null)
+                        dep.actionPoint.DeactivateInteraction(dep.action);
+                }
+
+                deactivatedActions = true;
             }
         }
 

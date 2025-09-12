@@ -16,6 +16,7 @@ public enum ActionWord
     sleep,
     up,
     down,
+    jump2,
 }
 
 [System.Serializable]
@@ -40,6 +41,7 @@ public class Decision
     public ActionPoint nextActionPoint;
     public ActionWord action;
     public DependentDecision[] dependentDecisions;
+    public DependentDecision[] deactivateDecisions;
 
     [ReorderableList]
     public PathPoint[] path;
@@ -68,8 +70,8 @@ public class ActionPoint : MonoBehaviour
 
     [Header("Gizmos Settings")]
     public bool drawPaths = true;
-    [Range(8, 64)] public int labelFontSize = 12;
-    [Range(8, 64)] public int actionWordFontSize = 16;
+    [Range(2, 64)] public int labelFontSize = 12;
+    [Range(2, 64)] public int actionWordFontSize = 16;
     [Tooltip("Vertical separation between overlapping paths (in world units).")]
     public float pathOffset = 0.25f;
     [Tooltip("Vertical spacing between action labels.")]
@@ -86,6 +88,18 @@ public class ActionPoint : MonoBehaviour
             if (!decision.active && decision.action == action)
             {
                 decision.active = true;
+            }
+        }
+    }
+
+    public void DeactivateInteraction(ActionWord action)
+    {
+
+        foreach (Decision decision in possibleActions)
+        {
+            if (decision.active && decision.action == action)
+            {
+                decision.active = false;
             }
         }
     }

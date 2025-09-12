@@ -22,6 +22,8 @@ public static class LocalizationEvents
 public class Settings : MonoBehaviour
 {
 
+    [SerializeField] private TextMeshProUGUI unlockedWordsText;
+
     private static Settings instance;
 
     [Header("General Settings")]
@@ -39,6 +41,11 @@ public class Settings : MonoBehaviour
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
         return instance.localizedData[instance.currentLanguage][key];
+    }
+
+    public static void UpdateUnlockedWordsDisplayGlobal()
+    {
+        instance.UpdateUnlockedWordsDisplay();
     }
 
 
@@ -191,6 +198,8 @@ public class Settings : MonoBehaviour
         languageDropdown.value = 1; // Set default value to English (index 1)
 
         ChangeLanguage(1);// Set default language to English (index 1)
+
+        UpdateUnlockedWordsDisplay();
     }
 
     public void ChangeLanguage(int index)
@@ -200,5 +209,40 @@ public class Settings : MonoBehaviour
 
         currentLanguage = languageDropdown.options[index].text;
         LocalizationEvents.NotifyLanguageChanged();
+
+        UpdateUnlockedWordsDisplay();
     }
+
+    public void UpdateUnlockedWordsDisplay()
+    {
+        if (unlockedWordsText == null) return;
+
+        string data = PlayerPrefs.GetString("UnlockedActions", "");
+        if (string.IsNullOrEmpty(data))
+        {
+            unlockedWordsText.text = "Unlocked Words:\n<None>";
+            return;
+        }
+
+        string[] actions = data.Split(',');
+
+        // Get localized text for each unlocked action
+        var localizedWords = new List<string>();
+        foreach (string action in actions)
+        {
+            if (string.IsNullOrEmpty(action)) continue;
+
+            try
+            {
+                localizedWords.Add(GetText(action));
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"Could not get localized text for {action}: {ex.Message}");
+            }
+        }
+
+        unlockedWordsText.text = "Unlocked Words:\n" + string.Join("\n", localizedWords);
+    }
+
 }

@@ -87,6 +87,8 @@ public class LevelManager : MonoBehaviour
             CatState catState = FindObjectOfType<CatState>();
 
             if (catState != null) catState.UnlockAction(missingWord);
+
+            Settings.UpdateUnlockedWordsDisplayGlobal();
         }
     }
 }
