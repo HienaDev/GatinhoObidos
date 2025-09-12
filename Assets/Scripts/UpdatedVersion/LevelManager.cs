@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     private List<LetterPickUp> spawnedLetters = new List<LetterPickUp>();
 
+    private int lettersCollected = 0;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -73,6 +75,7 @@ public class LevelManager : MonoBehaviour
     {
         if(missingLetters.Contains(index))
         {
+            lettersCollected++;
             missingLetters.Remove(index);
         }
         else
@@ -80,7 +83,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log($"Letter {index} is not part of the missing word.");
         }
 
-        if (missingLetters.Count == 0)
+        if (lettersCollected >= numberOfMissingLetters)
         {
             Debug.Log($"All letters collected! You can now perform the action: {missingWord}");
             

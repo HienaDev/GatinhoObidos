@@ -32,7 +32,25 @@ public class CatState : MonoBehaviour
 
         transform.position = startingActionPoint.transform.position;
 
-        //PlayerPrefs.DeleteKey(PlayerPrefsKey); // Uncomment to reset unlocked actions during testing
+        unlockedActions = LoadUnlockedActions();
+
+        // If no saved actions yet, initialize defaults
+        if (unlockedActions.Count == 0)
+        {
+            unlockedActions.Add(ActionWord.right);
+            unlockedActions.Add(ActionWord.left);
+            unlockedActions.Add(ActionWord.sleep);
+            unlockedActions.Add(ActionWord.up);
+            unlockedActions.Add(ActionWord.down);
+
+            SaveUnlockedActions(); // save defaults once
+        }
+    }
+
+    public void ResetGlossary()
+    {
+
+        PlayerPrefs.DeleteKey(PlayerPrefsKey); // Uncomment to reset unlocked actions during testing
 
         unlockedActions = LoadUnlockedActions();
 
@@ -42,12 +60,13 @@ public class CatState : MonoBehaviour
             unlockedActions.Add(ActionWord.right);
             unlockedActions.Add(ActionWord.left);
             unlockedActions.Add(ActionWord.sleep);
-            unlockedActions.Add(ActionWord.climb);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
 
             SaveUnlockedActions(); // save defaults once
         }
+
+        Settings.UpdateUnlockedWordsDisplayGlobal();
     }
 
     public void UnlockAction(ActionWord action)
@@ -126,7 +145,7 @@ public class CatState : MonoBehaviour
             {
                 Debug.Log("Found interaction: " + decisionName);
 
-                if (!unlockedActions.Contains(action.action))
+                if (!unlockedActions.Contains((ActionWord)Enum.Parse(typeof(ActionWord), decisionName, true)))
                 {
                     Debug.LogWarning("Action not unlocked: " + decisionName);
                     return;
