@@ -93,6 +93,13 @@ public class ActionPoint : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
+
+        Gizmos.color = lineColor;
+        Gizmos.DrawCube(transform.position + new Vector3(0f, lineHeight, 0f), new Vector3(lineWidth, lineHeight * 2, lineWidth));
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube(transform.position, new Vector3(lineWidth, lineWidth, lineWidth));
+
         if (!drawPaths) return;
         if (possibleActions == null || possibleActions.Length == 0) return;
 

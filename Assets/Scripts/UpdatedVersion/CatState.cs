@@ -40,6 +40,8 @@ public class CatState : MonoBehaviour
             unlockedActions.Add(ActionWord.left);
             unlockedActions.Add(ActionWord.sleep);
             unlockedActions.Add(ActionWord.climb);
+            unlockedActions.Add(ActionWord.up);
+            unlockedActions.Add(ActionWord.down);
 
             SaveUnlockedActions(); // save defaults once
         }
