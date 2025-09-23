@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
 
     private int lettersCollected = 0;
 
+    [SerializeField] private Color letterColor = Color.black;
+
     [SerializeField] private string currentLevelName;
 
     // Start is called before the first frame update
@@ -37,6 +39,7 @@ public class LevelManager : MonoBehaviour
         {
             Transform pos = letterPositions[i];
             LetterPickUp letterObj = Instantiate(letterPrefab, pos.position, Quaternion.identity);
+            letterObj.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = letterColor;
             LetterPickUp letterPickUp = letterObj.GetComponent<LetterPickUp>();
 
             spawnedLetters.Add(letterObj);
