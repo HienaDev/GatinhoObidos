@@ -17,6 +17,7 @@ public enum ActionWord
     up,
     down,
     jump2,
+    awake,
 }
 
 [System.Serializable]

@@ -149,4 +149,6 @@ public class WriteToUI : MonoBehaviour
 
     public string GetWord() => wordForPlatforms;
 
+    public void ClearWord() => text = "";
+
 }

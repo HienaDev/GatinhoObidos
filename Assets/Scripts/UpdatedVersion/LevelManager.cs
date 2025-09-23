@@ -17,11 +17,15 @@ public class LevelManager : MonoBehaviour
 
     private int lettersCollected = 0;
 
+    [SerializeField] private string currentLevelName;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
 
         yield return new WaitForSeconds(0.1f); // Wait for Settings to initialize
+
+        UnlockLevel(currentLevelName);
 
         if (letterPositions.Length < numberOfMissingLetters)
         {
@@ -92,6 +96,22 @@ public class LevelManager : MonoBehaviour
             if (catState != null) catState.UnlockAction(missingWord);
 
             Settings.UpdateUnlockedWordsDisplayGlobal();
+        }
+    }
+
+    /// <summary>
+    /// Unlocks a new level and saves it in PlayerPrefs
+    /// </summary>
+    public void UnlockLevel(string levelName)
+    {
+        string unlocked = PlayerPrefs.GetString("UnlockedLevels", "");
+
+        if (!unlocked.Contains(levelName))
+        {
+            unlocked += levelName + ";"; // Add separator
+            PlayerPrefs.SetString("UnlockedLevels", unlocked);
+            PlayerPrefs.Save();
+            Debug.Log($"Unlocked: {levelName}");
         }
     }
 }

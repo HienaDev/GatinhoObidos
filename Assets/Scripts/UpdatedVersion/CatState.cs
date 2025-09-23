@@ -40,6 +40,7 @@ public class CatState : MonoBehaviour
             unlockedActions.Add(ActionWord.right);
             unlockedActions.Add(ActionWord.left);
             unlockedActions.Add(ActionWord.sleep);
+            unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
 
@@ -60,6 +61,7 @@ public class CatState : MonoBehaviour
             unlockedActions.Add(ActionWord.right);
             unlockedActions.Add(ActionWord.left);
             unlockedActions.Add(ActionWord.sleep);
+            unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
 

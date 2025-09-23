@@ -18,8 +18,6 @@ public class ListenForWord : MonoBehaviour
     {
         textMeshProUGUI = GetComponentInChildren<TextMeshProUGUI>();
         word = textMeshProUGUI.text;
-
-
     }
 
     // Update is called once per frame
