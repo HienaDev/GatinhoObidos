@@ -12,7 +12,8 @@ public class LetterPickUp : MonoBehaviour
 
     private LevelManager levelManager;
 
-    private TextMeshProUGUI text;
+    public TextMeshProUGUI text;
+    public TextMeshProUGUI textBackground;
     [SerializeField] private float rotateDuration = 0.2f; // fast rotation time
     [SerializeField] private float popScaleMultiplier = 2f;
     [SerializeField] private float pauseDuration = 0.5f;
@@ -31,7 +32,6 @@ public class LetterPickUp : MonoBehaviour
         this.levelManager = levelManager;
         this.targetTransform = targetTransform;
 
-        text = GetComponentInChildren<TextMeshProUGUI>();
 
         UpdateText();
     }
@@ -40,6 +40,7 @@ public class LetterPickUp : MonoBehaviour
     {
         Debug.Log(actionWord.ToString() + " :Updating letter text for index: " + index );// + Settings.GetText(actionWord.ToString())[index]);
         text.text = Settings.GetText(actionWord.ToString())[index].ToString();
+        textBackground.text = text.text;
     }
 
 
@@ -51,6 +52,7 @@ public class LetterPickUp : MonoBehaviour
             {
                 levelManager.CollectLetter(index);
                 PlayTween(text.transform, targetTransform);
+                PlayTween(textBackground.transform, targetTransform);
                 collectEffect.gameObject.SetActive(true);
                 collectEffect.Play();
                 Collider2D collider2D = GetComponent<Collider2D>();

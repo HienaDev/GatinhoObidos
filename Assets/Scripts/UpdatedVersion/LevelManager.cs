@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         {
             Transform pos = letterPositions[i];
             LetterPickUp letterObj = Instantiate(letterPrefab, pos.position, Quaternion.identity);
-            letterObj.GetComponentInChildren<TMPro.TextMeshProUGUI>().color = letterColor;
+            letterObj.text.color = letterColor;
             LetterPickUp letterPickUp = letterObj.GetComponent<LetterPickUp>();
 
             spawnedLetters.Add(letterObj);
