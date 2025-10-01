@@ -908,7 +908,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4899,6 +4899,7 @@ MonoBehaviour:
   - {fileID: 368018631}
   letterPrefab: {fileID: 8573704925517135626, guid: 0b033aaf161dee144ba79fd7a4f9424b, type: 3}
   letterCollectTarget: {fileID: 673781901}
+  letterColor: {r: 0, g: 0, b: 0, a: 1}
   currentLevelName: Porta Traicao 3
 --- !u!114 &1383792771
 MonoBehaviour:
