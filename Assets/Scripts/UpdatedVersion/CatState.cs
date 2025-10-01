@@ -194,13 +194,16 @@ public class CatState : MonoBehaviour
             bool movingLeft = transform.position.x - target.position.x > 0;
             spriteRenderer.flipX = movingLeft;
 
-            // --- Head tilt (Z rotation) ---
-            Vector3 direction = (target.position - transform.position).normalized;
-            float angleZ = Mathf.Atan2(direction.y, Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
-            if (movingLeft) angleZ = -angleZ;
+            if(point.rotate)
+            {
+                // --- Head tilt (Z rotation) ---
+                Vector3 direction = (target.position - transform.position).normalized;
+                float angleZ = Mathf.Atan2(direction.y, Mathf.Abs(direction.x)) * Mathf.Rad2Deg;
+                if (movingLeft) angleZ = -angleZ;
 
-            // Snap Z rotation instantly
-            transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
+                // Snap Z rotation instantly
+                transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
+            }
 
             // --- Move with speed (manual duration calculation) ---
             float distance = Vector3.Distance(transform.position, target.position);

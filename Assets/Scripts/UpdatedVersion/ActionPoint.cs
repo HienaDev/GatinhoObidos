@@ -27,6 +27,7 @@ public class ActionTypeEvent : UnityEngine.Events.UnityEvent<ActionWord> { }
 [Serializable]
 public class PathPoint
 {
+    public bool rotate = true;
     public bool activateDependentDecisions = false;
     public float speed = 3f;
     public AnimationClip animation;

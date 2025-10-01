@@ -570,7 +570,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 828053150}
@@ -590,7 +591,8 @@ MonoBehaviour:
     - actionPoint: {fileID: 125662327}
       action: 6
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: bd5f1b7c23bcf8c4ab7b0c01dff2d846, type: 2}
       point: {fileID: 921473775}
@@ -598,7 +600,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 1
+    - rotate: 1
+      activateDependentDecisions: 1
       speed: 3
       animation: {fileID: 7400000, guid: bd5f1b7c23bcf8c4ab7b0c01dff2d846, type: 2}
       point: {fileID: 268052082}
@@ -884,7 +887,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1879469650}
@@ -898,7 +902,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 79067270}
@@ -1052,7 +1057,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 914910131}
@@ -1066,7 +1072,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 92742749}
@@ -1110,9 +1117,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c186b9682bf2e95469c3b255e434abcf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11e1f4cb9cf7f674fbe1e6f06474d81b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.075
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1584,7 +1591,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1846462219}
@@ -1598,7 +1606,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 817624024}
@@ -1606,7 +1615,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 2083819708}
@@ -1614,7 +1624,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1556408494}
@@ -1622,7 +1633,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 2131454610}
@@ -1630,7 +1642,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 612173766}
@@ -1683,7 +1696,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 890430278}
@@ -1697,7 +1711,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1677786523}
@@ -1705,7 +1720,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 2082666770}
@@ -1713,7 +1729,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1469398362}
@@ -1721,7 +1738,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1237918240}
@@ -3125,7 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ebbeb0ec685784ca9af471677e1c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
+  fadeDuration: 3
 --- !u!212 &521158809
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3146,7 +3164,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3166,7 +3184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -4062,7 +4080,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1860586444}
@@ -4076,7 +4095,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1168329304}
@@ -4084,7 +4104,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 379849243}
@@ -4092,7 +4113,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 146267470}
@@ -4100,7 +4122,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 404692430}
@@ -4108,7 +4131,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1419837088}
@@ -4116,7 +4140,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 852855579}
@@ -4124,7 +4149,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 224635753}
@@ -4138,7 +4164,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1968836885}
@@ -4146,7 +4173,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1299545656}
@@ -4154,7 +4182,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 491864533}
@@ -4162,7 +4191,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 2014839277}
@@ -4170,7 +4200,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 0
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 2122880396}
@@ -4465,7 +4496,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1231685445}
@@ -4479,7 +4511,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 2015690803}
@@ -4487,7 +4520,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1198902574}
@@ -4495,7 +4529,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 912971407}
@@ -4503,7 +4538,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1654488037}
@@ -4511,7 +4547,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1887040220}
@@ -4519,7 +4556,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1169595166}
@@ -4527,7 +4565,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1114823228}
@@ -4535,7 +4574,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1899788610}
@@ -5232,7 +5272,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 997153827}
@@ -5246,7 +5287,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 330597115}
@@ -5260,7 +5302,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 685304573}
@@ -5268,7 +5311,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 331051877}
@@ -5276,7 +5320,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 821408411}
@@ -5284,7 +5329,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 491582209}
@@ -5292,7 +5338,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 910271277}
@@ -5393,7 +5440,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 476529067}
@@ -5425,7 +5473,8 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1131255150}
@@ -5451,7 +5500,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 202488077}
@@ -6359,7 +6409,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1665707255}
@@ -6373,7 +6424,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 664299251}
@@ -6381,7 +6433,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1273558654}
@@ -6389,7 +6442,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1175921734}
@@ -6397,7 +6451,8 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 897059958}
@@ -8127,7 +8182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45d3feaf7a8cfd49af94cd7c57c3a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingActionPoint: {fileID: 1346234175}
+  startingActionPoint: {fileID: 160149382}
   speed: 3
   idleAnimation: {fileID: 7400000, guid: daacd6df71fe40248a5058c2a81ec1b3, type: 2}
 --- !u!61 &1884862299
@@ -8255,7 +8310,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 491906247}
@@ -8269,7 +8325,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1303437971}
@@ -9195,7 +9252,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1439682717}
@@ -9209,7 +9267,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 875122265}
@@ -9274,7 +9333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ebbeb0ec685784ca9af471677e1c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
+  fadeDuration: 3
 --- !u!95 &2069353644
 Animator:
   serializedVersion: 5
@@ -9316,7 +9375,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9336,7 +9395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -230604501
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 30eb6c0eeb4faf746ac05d9e751aba93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
@@ -14385,7 +14444,8 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - activateDependentDecisions: 0
+    - rotate: 1
+      activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
       point: {fileID: 1098981716}
