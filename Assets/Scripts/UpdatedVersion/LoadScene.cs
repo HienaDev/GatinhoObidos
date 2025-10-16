@@ -10,4 +10,9 @@ public class LoadScene : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(nextLevelName);
     }
+
+    public void ResetLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }
