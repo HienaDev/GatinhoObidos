@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1442,7 +1441,7 @@ Transform:
   m_GameObject: {fileID: 224635752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.08, y: -3.55, z: 0}
+  m_LocalPosition: {x: 3.185, y: -3.673, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3014,12 +3013,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4511,7 +4510,7 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 3
       animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
@@ -4520,7 +4519,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4529,7 +4528,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4538,7 +4537,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4547,7 +4546,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4556,7 +4555,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4565,7 +4564,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -4574,7 +4573,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -5229,7 +5228,7 @@ GameObject:
   - component: {fileID: 1110528309}
   - component: {fileID: 1110528310}
   m_Layer: 0
-  m_Name: First Platofrm 2 L/U - Action Point
+  m_Name: First Platofrm 2 L/U/J - Action Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5302,7 +5301,7 @@ MonoBehaviour:
     dependentDecisions: []
     deactivateDecisions: []
     path:
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -5311,7 +5310,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -5320,7 +5319,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -5329,7 +5328,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -5338,7 +5337,7 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls: []
-    - rotate: 1
+    - rotate: 0
       activateDependentDecisions: 0
       speed: 6
       animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
@@ -9497,13 +9496,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
