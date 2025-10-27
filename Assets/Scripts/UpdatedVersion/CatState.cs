@@ -194,7 +194,7 @@ public class CatState : MonoBehaviour
             bool movingLeft = transform.position.x - target.position.x > 0;
             spriteRenderer.flipX = movingLeft;
 
-            if(point.rotate)
+            if (point.rotate)
             {
                 // --- Head tilt (Z rotation) ---
                 Vector3 direction = (target.position - transform.position).normalized;
@@ -203,6 +203,10 @@ public class CatState : MonoBehaviour
 
                 // Snap Z rotation instantly
                 transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
+            }
+            else if (action.action == ActionWord.down)
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             }
 
             // --- Move with speed (manual duration calculation) ---
@@ -238,7 +242,7 @@ public class CatState : MonoBehaviour
             // --- Deactivate decisions ---
             if (action.deactivateDecisions != null && !deactivatedActions)
             {
-                Debug.Log("Deactivating decisions..."); 
+                Debug.Log("Deactivating decisions...");
                 foreach (DependentDecision dep in action.deactivateDecisions)
                 {
                     Debug.Log("Deactivating action: " + dep.action + " on ActionPoint: " + (dep.actionPoint != null ? dep.actionPoint.name : "null"));

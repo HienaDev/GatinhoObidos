@@ -26,10 +26,10 @@ public class LevelPicker : MonoBehaviour
     // Dictionary: Key = Level name, Value = Scene name
     private Dictionary<string, string> allLevels = new Dictionary<string, string>
     {
-        { "Porta Traicao 1" , "Chapter1" },
+        { "Floresta" , "Chapter1" },
         { "Porta Traicao 1.1" , "Chapter1" },
-        { "Porta Traicao 2" , "Chapter2" },
-        { "Porta Traicao 3" , "Chapter3" },
+        { "Castelo" , "Chapter2" },
+        { "Quarto Princesa" , "Chapter3" },
     };
 
     private const string unlockedKey = "UnlockedLevels";
@@ -57,6 +57,7 @@ public class LevelPicker : MonoBehaviour
             // Unlock the first defined level
             string firstLevelName = new List<string>(allLevels.Keys)[0];
             UnlockLevel(firstLevelName);
+
         }
     }
 
@@ -117,7 +118,7 @@ public class LevelPicker : MonoBehaviour
             if (allLevels.TryGetValue(levelName, out string sceneName))
             {
                 var highlighter = Instantiate(levelWordPrefab, levelPicker.transform);
-                highlighter.Initialize(levelName, allLevels[levelName], this); // <- pass the level name
+                highlighter.Initialize(levelName, allLevels[levelName], this); 
                 
                 float posX = startingLevelPos.x + (int)(numberOfLevelsSpawned / 6) * levelSpacingX;
                 float posY = startingLevelPos.y - (numberOfLevelsSpawned % 6) * levelSpacingY;

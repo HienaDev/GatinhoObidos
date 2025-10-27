@@ -224,4 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 372561402251487259}
+  targetWord: 
+  targetScene: 
   highlightColor: {r: 1, g: 0.7603419, b: 0, a: 1}
+  floatAmplitude: 2
+  floatFrequency: 2
+  ghostAlpha: 0.5
+  cursorBlinkSpeed: 2

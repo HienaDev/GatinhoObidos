@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,9 +12,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private ActionWord missingWord;
     [SerializeField] private int numberOfMissingLetters = 3;
     private List<int> missingLetters;
+    private string missingWordLocalized;
     [SerializeField] private Transform[] letterPositions;
     [SerializeField] private LetterPickUp letterPrefab;
     [SerializeField] private Transform letterCollectTarget; // Optional target for letters to move towards
+
+    [SerializeField] private GameObject particleExplosion;
 
     private List<LetterPickUp> spawnedLetters = new List<LetterPickUp>();
 
@@ -20,6 +26,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Color letterColor = Color.black;
 
     [SerializeField] private string currentLevelName;
+
+    [SerializeField] private TextMeshProUGUI wordMissingUI;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -57,6 +65,8 @@ public class LevelManager : MonoBehaviour
         missingLetters = new List<int>();
 
         string missingWordStr = Settings.GetText(missingWord.ToString());
+        missingWordLocalized = missingWordStr;
+        wordMissingUI.text = missingWordStr;
         List<int> availableIndices = Enumerable.Range(0, missingWordStr.Length).ToList();
 
         // Shuffle indices
@@ -74,8 +84,16 @@ public class LevelManager : MonoBehaviour
                 char randomLetter = missingWordStr[availableIndices[i]];
                 spawnedLetters[i].Instantiate(missingWord, availableIndices[i], this, letterCollectTarget);
                 missingLetters.Add(availableIndices[i]);
+
+                wordMissingUI.text = ReplaceLetter(wordMissingUI.text, availableIndices[i], '_');
             }
         }
+    }
+
+    private string ReplaceLetter(string word, int index, char c)
+    {
+        Debug.Log($"Try replace {c} letter ({index}) in word {word}"); 
+        return word.Substring(0, index) + c + word.Substring(index + 1);
     }
 
     public void CollectLetter(int index)
@@ -83,6 +101,7 @@ public class LevelManager : MonoBehaviour
         if(missingLetters.Contains(index))
         {
             lettersCollected++;
+            wordMissingUI.text = ReplaceLetter(wordMissingUI.text, index, missingWordLocalized[index]);
             missingLetters.Remove(index);
         }
         else
@@ -96,10 +115,27 @@ public class LevelManager : MonoBehaviour
             
             CatState catState = FindObjectOfType<CatState>();
 
+            ScaleDownAndDeactivateWord(letterCollectTarget.GetComponent<RectTransform>(), 2f);
+
             if (catState != null) catState.UnlockAction(missingWord);
 
             Settings.UpdateUnlockedWordsDisplayGlobal();
         }
+    }
+
+    private void ScaleDownAndDeactivateWord(RectTransform target, float duration)
+    {
+
+
+        // Create tween
+        target.DOScale(Vector3.zero, duration)
+              .SetEase(Ease.InBack) // nice easing effect
+              .OnComplete(() =>
+              {
+                  target.gameObject.SetActive(false);
+                  particleExplosion = Instantiate(particleExplosion);
+                  particleExplosion.transform.position = target.transform.position;
+              });
     }
 
     /// <summary>

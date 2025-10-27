@@ -25,12 +25,20 @@ public class WriteToUI : MonoBehaviour
     [SerializeField] private ReadInput catInput;
     [SerializeField] private CatState catState;
 
+    [SerializeField] private byte transparencyValue = 0;
     [SerializeField] private Image outlineUI;
     private Color32 outlineColorDefault;
     private Color32 outlineColorTransparent;
     [SerializeField] private Image backgroundUI;
     private Color32 backgroundColorDefault;
     private Color32 backgroundColorTransparent;
+
+    private Color32 textColor;
+    private Color32 textColorTransparent;
+
+    private float blinkTimer = 0f;
+    private bool showCursor = true;
+    [SerializeField] private float blinkInterval = 0.5f; // seconds between blinks
 
     void OnGUI()
     {
@@ -60,6 +68,8 @@ public class WriteToUI : MonoBehaviour
     void Start()
     {
         textUI = GetComponentInChildren<TextMeshProUGUI>();
+        textColor = textUI.color;
+        textColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), 0);
 
         text = "";
 
@@ -73,9 +83,11 @@ public class WriteToUI : MonoBehaviour
         defaultRectOutlineWidth = rectOutline.rect.width;
 
         outlineColorDefault = outlineUI.color;
-        outlineColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), 55);
+        outlineColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), transparencyValue);
         backgroundColorDefault = backgroundUI.color;
-        backgroundColorTransparent = new Color32((byte)(backgroundUI.color.r * 255), (byte)(backgroundUI.color.g * 255), (byte)(backgroundUI.color.b * 255), 55);
+        backgroundColorTransparent = new Color32((byte)(backgroundUI.color.r * 255), (byte)(backgroundUI.color.g * 255), (byte)(backgroundUI.color.b * 255), transparencyValue);
+
+        textUI.color = textColorTransparent;
     }
 
     // Update is called once per frame
@@ -131,18 +143,34 @@ public class WriteToUI : MonoBehaviour
             text = "";
         }
 
-        textUI.text = text;
+        // Blink timer (only when there is text)
+        if (text.Length > 0)
+        {
+            blinkTimer += Time.deltaTime;
+            if (blinkTimer >= blinkInterval)
+            {
+                showCursor = !showCursor;
+                blinkTimer = 0f;
+            }
+        }
+
+        // Set cursor color based on blink state
+        string cursorColor = (showCursor && text.Length > 0) ? "#000000" : "#00000000";
+        textUI.text = text + $"<b><color={cursorColor}>|</color></b>";
+
         textAboveCat.text = text;
 
         if (text.Length > 0)
         {
             outlineUI.color = outlineColorDefault;
             backgroundUI.color = backgroundColorDefault;
+            textUI.color = textColor;
         }
         else
         {
             outlineUI.color = outlineColorTransparent;
             backgroundUI.color = backgroundColorTransparent;
+            textUI.color = textColorTransparent;
 
         }
     }
