@@ -28,6 +28,7 @@ public class Settings : MonoBehaviour
 
     [Header("General Settings")]
     [SerializeField] private GameObject gameMenu;
+    [SerializeField] private GameObject aboutMenu;
 
     [Header("Localization Settings")]
     public string startingLanguage = "English";
@@ -75,6 +76,7 @@ public class Settings : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameMenu.SetActive(!gameMenu.activeSelf);
+            aboutMenu.SetActive(false);
         }
     }
 
