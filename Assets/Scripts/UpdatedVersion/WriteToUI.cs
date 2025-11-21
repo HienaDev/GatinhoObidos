@@ -158,7 +158,6 @@ public class WriteToUI : MonoBehaviour
         string cursorColor = (showCursor && text.Length > 0) ? "#000000" : "#00000000";
         textUI.text = text + $"<b><color={cursorColor}>|</color></b>";
 
-        textAboveCat.text = text;
 
         if (text.Length > 0)
         {

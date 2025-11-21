@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform[] letterPositions;
     [SerializeField] private LetterPickUp letterPrefab;
     [SerializeField] private Transform letterCollectTarget; // Optional target for letters to move towards
+    private Vector3 wordCollectTarget;
+    private Animator noteBookAnimator;
 
     [SerializeField] private GameObject particleExplosion;
 
@@ -34,6 +36,9 @@ public class LevelManager : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.1f); // Wait for Settings to initialize
+
+        wordCollectTarget = Camera.main.ScreenToWorldPoint(FindAnyObjectByType<TAG_WORDS>().transform.position);
+        noteBookAnimator = FindAnyObjectByType<TAG_WORDS>().GetComponent<Animator>();
 
         UnlockLevel(currentLevelName);
 
@@ -128,6 +133,8 @@ public class LevelManager : MonoBehaviour
 
 
         // Create tween
+        target.DOMove(wordCollectTarget, duration).SetEase(Ease.InBack);
+
         target.DOScale(Vector3.zero, duration)
               .SetEase(Ease.InBack) // nice easing effect
               .OnComplete(() =>
@@ -135,6 +142,7 @@ public class LevelManager : MonoBehaviour
                   target.gameObject.SetActive(false);
                   particleExplosion = Instantiate(particleExplosion);
                   particleExplosion.transform.position = target.transform.position;
+                  noteBookAnimator.SetTrigger("Writing");
               });
     }
 

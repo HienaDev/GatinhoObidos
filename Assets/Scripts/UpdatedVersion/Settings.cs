@@ -29,6 +29,7 @@ public class Settings : MonoBehaviour
     [Header("General Settings")]
     [SerializeField] private GameObject gameMenu;
     [SerializeField] private GameObject aboutMenu;
+    [SerializeField] private GameObject wordsMenu;
 
     [Header("Localization Settings")]
     public string startingLanguage = "English";
@@ -77,7 +78,13 @@ public class Settings : MonoBehaviour
         {
             gameMenu.SetActive(!gameMenu.activeSelf);
             aboutMenu.SetActive(false);
+            wordsMenu.SetActive(false);
         }
+    }
+
+    public void ToggleWordsMenu()
+    {
+        wordsMenu.SetActive(!wordsMenu.activeSelf);
     }
 
     IEnumerator LoadCSV()

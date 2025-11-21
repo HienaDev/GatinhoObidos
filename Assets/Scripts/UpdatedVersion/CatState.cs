@@ -204,7 +204,7 @@ public class CatState : MonoBehaviour
                 // Snap Z rotation instantly
                 transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
             }
-            else if (action.action == ActionWord.down)
+            else if (action.action == ActionWord.down && point.animation.name == "Climb")
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 180f);
             }
