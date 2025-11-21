@@ -23,6 +23,9 @@ public class CatState : MonoBehaviour
     private List<ActionWord> unlockedActions;
     private const string PlayerPrefsKey = "UnlockedActions";
 
+    [SerializeField] private GameObject confused;
+    [SerializeField] private GameObject blocked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +152,7 @@ public class CatState : MonoBehaviour
 
                 if (!unlockedActions.Contains((ActionWord)Enum.Parse(typeof(ActionWord), decisionName, true)))
                 {
+                    StartCoroutine(TurnOnObjectTimer(confused, 2f));
                     Debug.LogWarning("Action not unlocked: " + decisionName);
                     return;
                 }
@@ -159,10 +163,16 @@ public class CatState : MonoBehaviour
             }
         }
 
+        StartCoroutine(TurnOnObjectTimer(blocked, 2f));
         Debug.Log("No matching action found for input: " + input);
     }
 
-
+    private IEnumerator TurnOnObjectTimer(GameObject targetObject, float duration)
+    {
+        targetObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        targetObject.SetActive(false);
+    }
 
     // Helper: removes any trailing digits from a string
     private string StripTrailingDigits(string s)
