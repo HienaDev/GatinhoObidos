@@ -1283,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410860439}
   - component: {fileID: 410860438}
+  - component: {fileID: 410860440}
   m_Layer: 0
   m_Name: Start L/S/A - Action Point
   m_TagString: Untagged
@@ -1322,6 +1323,18 @@ MonoBehaviour:
       onReachPoint:
         m_PersistentCalls:
           m_Calls:
+          - m_Target: {fileID: 410860440}
+            m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+            m_MethodName: LoadLevel
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
           - m_Target: {fileID: 1383792770}
             m_TargetAssemblyTypeName: LevelPicker, Assembly-CSharp
             m_MethodName: OpenMenu
@@ -1406,6 +1419,19 @@ Transform:
   - {fileID: 780744069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &410860440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410860437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9424cd69be960364f891bdeba37d52cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelName: Chapter1
 --- !u!1 &414530402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,7 +3875,7 @@ MonoBehaviour:
   twirl: {fileID: 1717420230}
   levelPicker: {fileID: 1893189424}
   levelWordPrefab: {fileID: 4498602203536242688, guid: a0eb55e655fe2954ca3529e61da2a821, type: 3}
-  writeToUI: {fileID: 0}
+  writeToUI: {fileID: 5260760906679985645}
   startingLevelPos: {x: -275, y: 180}
   levelSpacingY: 60
   levelSpacingX: 250
@@ -5830,6 +5856,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1985015949}
   m_SourcePrefab: {fileID: 100100000, guid: 0b2189f04f9693b42963471135e6e31d, type: 3}
+--- !u!114 &5260760906679985645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3211495089416163899, guid: 0b2189f04f9693b42963471135e6e31d, type: 3}
+  m_PrefabInstance: {fileID: 5260760906679985644}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985015947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cf851c13846de43ad00a01c52b8584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

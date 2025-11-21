@@ -8,6 +8,7 @@ using System.Linq;
 using System;
 using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public static class LocalizationEvents
 {
@@ -62,6 +63,23 @@ public class Settings : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if ((scene.name == "NewMainMenu"))
+        {
+            Destroy(this);
+        }
+
+        if(gameMenu != null) gameMenu.SetActive(false);
+
+        if(aboutMenu != null) aboutMenu.SetActive(false);
+        
+        if(wordsMenu != null) wordsMenu.SetActive(false);
+
     }
 
     void Start()
