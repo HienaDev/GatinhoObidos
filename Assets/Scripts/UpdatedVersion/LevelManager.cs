@@ -31,6 +31,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI wordMissingUI;
 
+    [SerializeField] private Scaler[] scalers;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -159,6 +161,14 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetString("UnlockedLevels", unlocked);
             PlayerPrefs.Save();
             Debug.Log($"Unlocked: {levelName}");
+        }
+    }
+
+    public void ScaleUIDown()
+    {
+        foreach(Scaler s in scalers)
+        {
+            s.ScaleDown();
         }
     }
 }

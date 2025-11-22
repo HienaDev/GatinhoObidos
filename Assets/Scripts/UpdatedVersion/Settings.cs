@@ -38,6 +38,8 @@ public class Settings : MonoBehaviour
     public string csvFileName = "localization.csv";
     [SerializeField] private TMP_Dropdown languageDropdown;
 
+    [SerializeField] private Scaler scalerBlock;
+
     private string csvContent;
     private Dictionary<string, Dictionary<string, string>> localizedData;
     public static string GetText(string key)
@@ -69,10 +71,6 @@ public class Settings : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if ((scene.name == "NewMainMenu"))
-        {
-            Destroy(this);
-        }
 
         if(gameMenu != null) gameMenu.SetActive(false);
 
@@ -80,6 +78,8 @@ public class Settings : MonoBehaviour
         
         if(wordsMenu != null) wordsMenu.SetActive(false);
 
+        if(scalerBlock != null)
+            scalerBlock.Play();
     }
 
 

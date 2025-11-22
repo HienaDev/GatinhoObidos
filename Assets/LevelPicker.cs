@@ -43,6 +43,7 @@ public class LevelPicker : MonoBehaviour
             string firstLevelName = new List<string>(allLevels.Keys)[0];
             UnlockLevel(firstLevelName);
         }
+        FindAnyObjectByType<CatState>().ResetGlossary();
     }
 
     public void ResetLevels()

@@ -190,6 +190,7 @@ MonoBehaviour:
   startingLanguage: English
   csvFileName: localization.csv
   languageDropdown: {fileID: 6933090020278008059}
+  scalerBlock: {fileID: 5934861881752089593}
 --- !u!1 &1284016391372209347
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,8 +385,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1161768654, guid: 4e79e3fab10b9124b932d32804b3af6f, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -624,7 +625,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 284, y: 165}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 150, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1223151749528848174
 CanvasRenderer:
@@ -654,7 +655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e28923a7f58d964a8328a6dc3284ad6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e9ddbbb2e23384db950ea2d978cc3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -730,7 +731,7 @@ Animator:
   m_GameObject: {fileID: 2460111972673775591}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fe841fa5b8d58649a52371275415905, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03c8881de3167ca4cb9f8c78d2efc8c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1213,7 +1214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1161768654, guid: 4e79e3fab10b9124b932d32804b3af6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e9ddbbb2e23384db950ea2d978cc3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1857,6 +1858,7 @@ GameObject:
   - component: {fileID: 5251342864505527332}
   - component: {fileID: 391941786414239690}
   - component: {fileID: 2586529959758455353}
+  - component: {fileID: 5934861881752089593}
   m_Layer: 5
   m_Name: Button Words
   m_TagString: Untagged
@@ -1911,7 +1913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 585ee50acfb7932498d95fa9da0593c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d172205ad0e99b84e8eeef39a47373e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2022,6 +2024,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6643946aba6ca044abb4213a36ff015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5934861881752089593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546206909054303221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2162ec66e59484bb1178236ff1bac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  easeType: 27
+  playOnStart: 1
 --- !u!1 &4677673957271537083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9, y: 4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8494874475954090575
@@ -2331,7 +2348,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 284, y: 165}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 125, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2736919280937117486
 CanvasRenderer:
@@ -2361,7 +2378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e28923a7f58d964a8328a6dc3284ad6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e9ddbbb2e23384db950ea2d978cc3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2437,7 +2454,7 @@ Animator:
   m_GameObject: {fileID: 5355389726283193319}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fe841fa5b8d58649a52371275415905, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03c8881de3167ca4cb9f8c78d2efc8c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2482,7 +2499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9, y: 4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5326135523285569720
@@ -3153,7 +3170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9, y: 4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8419719025396802551
@@ -3757,7 +3774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 628e3c9b52832214ca4d625fdd53a087, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 437745184ad72814d8f02f125de8bd59, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3806,7 +3823,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -95}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2390226493287161448
 CanvasRenderer:
@@ -3836,7 +3853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e28923a7f58d964a8328a6dc3284ad6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e9ddbbb2e23384db950ea2d978cc3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3912,7 +3929,7 @@ Animator:
   m_GameObject: {fileID: 8726144822235852897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fe841fa5b8d58649a52371275415905, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03c8881de3167ca4cb9f8c78d2efc8c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

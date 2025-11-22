@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class Scaler : MonoBehaviour
 {
@@ -15,15 +16,16 @@ public class Scaler : MonoBehaviour
         // Store the original scale
         _originalScale = transform.localScale;
 
-        // Reset to zero if it should play on start
-        if (playOnStart)
-            transform.localScale = Vector3.zero;
+
     }
 
     void Start()
     {
+
         if (playOnStart)
         {
+
+           transform.localScale = Vector3.zero;
             Play();
         }
     }
@@ -37,6 +39,11 @@ public class Scaler : MonoBehaviour
         transform.localScale = Vector3.zero;
 
         // Animate to original scale
-        transform.DOScale(_originalScale, duration).SetEase(easeType);
+        transform.DOScale(_originalScale, duration).SetEase(easeType).SetDelay(2f);
+    }
+
+    public void ScaleDown()
+    {
+        transform.DOScale(Vector3.zero, duration).SetEase(easeType);
     }
 }

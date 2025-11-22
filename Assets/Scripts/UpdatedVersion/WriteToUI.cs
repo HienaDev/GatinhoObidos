@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,11 @@ public class WriteToUI : MonoBehaviour
     private bool showCursor = true;
     [SerializeField] private float blinkInterval = 0.5f; // seconds between blinks
 
+    private bool UIHidden = true;
+    private Vector3 originalScale;
+
+   
+
     void OnGUI()
     {
 
@@ -49,7 +55,7 @@ public class WriteToUI : MonoBehaviour
         //char.IsLetter to filter out all other KeyCodes besides alphabetical.
         if (e.type == EventType.KeyDown &&
         e.keyCode.ToString().Length == 1 &&
-        char.IsLetter(e.keyCode.ToString()[0]))
+        char.IsLetter(e.keyCode.ToString()[0]) && !catState.moving && !UIHidden)
         {
             if (text.Length < 26)
             {
@@ -64,9 +70,17 @@ public class WriteToUI : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        originalScale = transform.localScale;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
+        
+
         textUI = GetComponentInChildren<TextMeshProUGUI>();
         textColor = textUI.color;
         textColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), 0);
@@ -96,11 +110,38 @@ public class WriteToUI : MonoBehaviour
 
         if (catState.moving)
         {
-            outlineUI.color = outlineColorTransparent;
-            backgroundUI.color = backgroundColorTransparent;
-            textUI.color = textColorTransparent;
+            
+
+
+                if (!UIHidden)
+                {
+                UIHidden = true;
+                transform.DOScale(0f, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
+                {
+                    outlineUI.color = outlineColorTransparent;
+                    backgroundUI.color = backgroundColorTransparent;
+                    textUI.color = textColorTransparent;
+                    UIHidden = true;
+                });
+                }
+            
+
             return;
         }
+
+        outlineUI.color = outlineColorDefault;
+        backgroundUI.color = backgroundColorDefault;
+        textUI.color = textColor;
+
+        if (UIHidden && Time.timeSinceLevelLoad > 2f)
+        {
+            UIHidden = false;
+            transform.localScale = Vector3.zero;
+            transform.DOScale(originalScale, 0.5f).SetEase(Ease.OutBack);
+        }
+
+        if (UIHidden)
+            return;
 
         // Add Space
         if ((Input.GetKeyDown(KeyCode.Space) && text.Length < 26 && text != ""))
@@ -151,25 +192,22 @@ public class WriteToUI : MonoBehaviour
         }
 
         // Blink timer (only when there is text)
-        if (text.Length > 0)
-        {
+
             blinkTimer += Time.deltaTime;
             if (blinkTimer >= blinkInterval)
             {
                 showCursor = !showCursor;
                 blinkTimer = 0f;
             }
-        }
+        
 
         // Set cursor color based on blink state
-        string cursorColor = (showCursor && text.Length > 0) ? "#000000" : "#00000000";
+        string cursorColor = (showCursor) ? "#000000" : "#00000000";
         textUI.text = text + $"<b><color={cursorColor}>|</color></b>";
 
 
 
-            outlineUI.color = outlineColorDefault;
-            backgroundUI.color = backgroundColorDefault;
-            textUI.color = textColor;
+
 
     }
 
