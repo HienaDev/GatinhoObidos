@@ -1316,8 +1316,8 @@ MonoBehaviour:
     path:
     - rotate: 1
       activateDependentDecisions: 1
-      speed: 3
-      animation: {fileID: 7400000, guid: de528bb6e5d2ca442b44782f5b941ff7, type: 2}
+      speed: 0.025
+      animation: {fileID: 7400000, guid: 92b8c042b9a451f4a82637589673aef1, type: 2}
       point: {fileID: 501042119}
       hasEvent: 1
       onReachPoint:
@@ -1572,7 +1572,7 @@ Transform:
   m_GameObject: {fileID: 501042118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.071, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
