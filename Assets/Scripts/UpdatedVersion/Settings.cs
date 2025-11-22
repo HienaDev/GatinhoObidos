@@ -82,6 +82,7 @@ public class Settings : MonoBehaviour
 
     }
 
+
     void Start()
     {
         currentLanguage = startingLanguage;
@@ -97,6 +98,11 @@ public class Settings : MonoBehaviour
             gameMenu.SetActive(!gameMenu.activeSelf);
             aboutMenu.SetActive(false);
             wordsMenu.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleWordsMenu();
         }
     }
 

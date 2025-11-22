@@ -94,6 +94,13 @@ public class WriteToUI : MonoBehaviour
     void Update()
     {
 
+        if (catState.moving)
+        {
+            outlineUI.color = outlineColorTransparent;
+            backgroundUI.color = backgroundColorTransparent;
+            textUI.color = textColorTransparent;
+            return;
+        }
 
         // Add Space
         if ((Input.GetKeyDown(KeyCode.Space) && text.Length < 26 && text != ""))
@@ -159,19 +166,11 @@ public class WriteToUI : MonoBehaviour
         textUI.text = text + $"<b><color={cursorColor}>|</color></b>";
 
 
-        if (text.Length > 0)
-        {
+
             outlineUI.color = outlineColorDefault;
             backgroundUI.color = backgroundColorDefault;
             textUI.color = textColor;
-        }
-        else
-        {
-            outlineUI.color = outlineColorTransparent;
-            backgroundUI.color = backgroundColorTransparent;
-            textUI.color = textColorTransparent;
 
-        }
     }
 
     public string GetWord() => wordForPlatforms;

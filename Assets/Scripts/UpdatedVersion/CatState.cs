@@ -14,7 +14,7 @@ public class CatState : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private float speed = 5f;
-    private bool moving;
+    public bool moving;
 
     [SerializeField] private AnimationClip idleAnimation;
 
