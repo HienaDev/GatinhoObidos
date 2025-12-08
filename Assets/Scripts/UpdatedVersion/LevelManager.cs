@@ -144,7 +144,7 @@ public class LevelManager : MonoBehaviour
                   target.gameObject.SetActive(false);
                   particleExplosion = Instantiate(particleExplosion);
                   particleExplosion.transform.position = target.transform.position;
-                  noteBookAnimator.SetTrigger("Writing");
+                  noteBookAnimator.SetBool("Writing", true);
               });
     }
 

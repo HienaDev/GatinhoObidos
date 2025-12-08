@@ -1,5 +1,5 @@
 word,Portugues,English,Espanol,Francais
-jump,salta,jump,salta,saut
+jump,saltar,jump,saltar,saut
 right,direita,right,derecha,droite
 left,esquerda,left,izquierda,gauche
 climb,escalar,climb,trepar,monter
@@ -7,11 +7,12 @@ interact,interagir,interact,interactuar,interagir
 hide,esconder,hide,esconder,cacher
 scratch,arranhar,scratch,rascar,gratter
 sleep,dormir,sleep,dormir,dormir
-tutorial_direita,"Neste jogo você controla o gato escrevendo sua história, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous contrôlez le chat en écrivant son histoire, essayez de taper 'droite'."
+tutorial_direita,"Neste jogo vocï¿½ controla o gato escrevendo sua histï¿½ria, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous contrï¿½lez le chat en ï¿½crivant son histoire, essayez de taper 'droite'."
 menu_language,Idioma,Language,Idioma,Langue
-settings,Definições,Settings,Definiciones,Définitions
-glossary,glossário,glossary,glosario,glossaire
+settings,Definiï¿½ï¿½es,Settings,Definiciones,Dï¿½finitions
+glossary,glossï¿½rio,glossary,glosario,glossaire
 up,cima,up,arriba,en haut
 down,baixo,down,abajo,en bas
 awake,acorda,awake,desperta,reveiller
 meow,miau,meow,miau,miau
+pause,pausar,pause,pausa,pause

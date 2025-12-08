@@ -187,6 +187,7 @@ MonoBehaviour:
   gameMenu: {fileID: 6603566697773917357}
   aboutMenu: {fileID: 5023436055125973325}
   wordsMenu: {fileID: 8804721983305100796}
+  wordsMenuAnimator: {fileID: 391941786414239690}
   startingLanguage: English
   csvFileName: localization.csv
   languageDropdown: {fileID: 6933090020278008059}

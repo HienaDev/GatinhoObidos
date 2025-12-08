@@ -42,8 +42,8 @@ public class CatState : MonoBehaviour
         {
             unlockedActions.Add(ActionWord.right);
             unlockedActions.Add(ActionWord.left);
-            unlockedActions.Add(ActionWord.sleep);
-            unlockedActions.Add(ActionWord.awake);
+            //unlockedActions.Add(ActionWord.sleep);
+            //unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
 
@@ -66,7 +66,6 @@ public class CatState : MonoBehaviour
             //unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
-            unlockedActions.Add(ActionWord.sleep);
 
             SaveUnlockedActions(); // save defaults once
         }
@@ -122,6 +121,18 @@ public class CatState : MonoBehaviour
 
     public void CheckInput(string input)
     {
+
+        // Strip trailing digits from input
+        string normalizedInput = StripTrailingDigits(input);
+
+        normalizedInput.Replace("_", " "); // allow underscores as spaces
+
+        if(normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))
+        {
+           Debug.Log("Pause command received.");
+            return;
+        }
+
         if (moving)
         {
             Debug.LogWarning("Cat is currently moving. Please wait until the action is completed.");
@@ -133,11 +144,6 @@ public class CatState : MonoBehaviour
             Debug.LogWarning("No current action point set.");
             return;
         }
-
-        // Strip trailing digits from input
-        string normalizedInput = StripTrailingDigits(input);
-
-        normalizedInput.Replace("_", " "); // allow underscores as spaces
 
         //// Try parse normalized input
         //if (!Enum.TryParse(normalizedInput, true, out ActionWord actionWord))
