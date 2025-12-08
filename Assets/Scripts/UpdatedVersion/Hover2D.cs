@@ -11,6 +11,7 @@ public class Hover2D : MonoBehaviour
     private Vector3 startPosition;
     private Tweener hoverTweener;
 
+    [SerializeField] private bool axisX = false; // New option for X axis hover
     void Start()
     {
         startPosition = transform.position;
@@ -23,6 +24,15 @@ public class Hover2D : MonoBehaviour
     {
         // Kill any existing tween to avoid duplicates
         hoverTweener?.Kill();
+
+        if(axisX)
+        {
+            // Tween left and right infinitely
+            hoverTweener = transform.DOMoveX(startPosition.x + hoverAmount, duration)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetEase(easeType); // Use inspector-selected ease
+            return;
+        }
 
         // Tween up and down infinitely
         hoverTweener = transform.DOMoveY(startPosition.y + hoverAmount, duration)
