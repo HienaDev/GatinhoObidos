@@ -31,6 +31,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private GameObject gameMenu;
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject wordsMenu;
+    [SerializeField] private Animator wordsMenuAnimator;
 
     [Header("Localization Settings")]
     public string startingLanguage = "English";
@@ -85,7 +86,13 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        currentLanguage = startingLanguage;
+        if(PlayerPrefs.HasKey("Language"))
+        {
+            Debug.Log("Loading saved language: " + PlayerPrefs.GetString("Language"));
+            currentLanguage = PlayerPrefs.GetString("Language");
+        }
+        else
+            currentLanguage = startingLanguage;
 
         StartCoroutine(LoadCSV());
     }
@@ -109,6 +116,7 @@ public class Settings : MonoBehaviour
     public void ToggleWordsMenu()
     {
         wordsMenu.SetActive(!wordsMenu.activeSelf);
+        wordsMenuAnimator.SetBool("Writing", false);
     }
 
     IEnumerator LoadCSV()
@@ -228,9 +236,24 @@ public class Settings : MonoBehaviour
 
         languageDropdown.onValueChanged.AddListener(ChangeLanguage);
 
-        languageDropdown.value = 1; // Set default value to English (index 1)
+        if(PlayerPrefs.HasKey("Language"))
+        {
+            string savedLang = PlayerPrefs.GetString("Language");
+            int index = options.IndexOf(savedLang);
+            if(index >= 0)
+            {
+                languageDropdown.value = index;
+                ChangeLanguage(index);
 
-        ChangeLanguage(1);// Set default language to English (index 1)
+            }
+        }
+        else
+        {
+            languageDropdown.value = 1; // Set default value to English (index 1)
+
+            ChangeLanguage(1);// Set default language to English (index 1)
+        }
+
 
         UpdateUnlockedWordsDisplay();
     }
@@ -242,6 +265,9 @@ public class Settings : MonoBehaviour
 
         currentLanguage = languageDropdown.options[index].text;
         LocalizationEvents.NotifyLanguageChanged();
+
+        //Save language on playerprefs
+        PlayerPrefs.SetString("Language", currentLanguage);
 
         UpdateUnlockedWordsDisplay();
     }

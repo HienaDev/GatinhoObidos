@@ -6177,7 +6177,7 @@ MonoBehaviour:
     - rotate: 0
       activateDependentDecisions: 0
       speed: 6
-      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1222485693}
       hasEvent: 0
       onReachPoint:
@@ -6186,7 +6186,7 @@ MonoBehaviour:
     - rotate: 0
       activateDependentDecisions: 0
       speed: 6
-      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1586844074}
       hasEvent: 0
       onReachPoint:
@@ -6195,7 +6195,7 @@ MonoBehaviour:
     - rotate: 0
       activateDependentDecisions: 0
       speed: 6
-      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 325515245}
       hasEvent: 0
       onReachPoint:
@@ -6204,7 +6204,7 @@ MonoBehaviour:
     - rotate: 0
       activateDependentDecisions: 0
       speed: 6
-      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1600310291}
       hasEvent: 0
       onReachPoint:
@@ -6213,7 +6213,7 @@ MonoBehaviour:
     - rotate: 0
       activateDependentDecisions: 0
       speed: 6
-      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
       point: {fileID: 1510578934}
       hasEvent: 0
       onReachPoint:
@@ -8238,7 +8238,7 @@ MonoBehaviour:
           m_Calls: []
   - active: 1
     nextActionPoint: {fileID: 1915163528}
-    action: 2
+    action: 9
     dependentDecisions: []
     deactivateDecisions: []
     path:
@@ -9016,7 +9016,7 @@ MonoBehaviour:
           m_Calls: []
   - active: 1
     nextActionPoint: {fileID: 1915163528}
-    action: 2
+    action: 9
     dependentDecisions: []
     deactivateDecisions: []
     path:

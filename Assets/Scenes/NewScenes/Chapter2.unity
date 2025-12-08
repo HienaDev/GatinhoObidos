@@ -513,14 +513,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112723490}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.81111854, w: 0.5848818}
-  m_LocalPosition: {x: -2.47, y: -0.3, z: 0.05600971}
+  m_LocalRotation: {x: -0, y: -0, z: 0.8847418, w: 0.46608165}
+  m_LocalPosition: {x: -2.46, y: -0.57, z: 0.05600971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 871138371}
   m_Father: {fileID: 1306548996}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 108.411}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 124.44}
 --- !u!114 &112723492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fedee3dcad234d4da568b8ddad04644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationOffset: {x: 0, y: 0, z: 60}
+  rotationOffset: {x: 0, y: 0, z: 40}
   rotationSpeed: 90
   ease: 30
   autoRotate: 0
@@ -6824,11 +6824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2980557986029277618, guid: 751c2cc60a750d94f978e75bcad86b6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.03
+      value: 7.78
       objectReference: {fileID: 0}
     - target: {fileID: 2980557986029277618, guid: 751c2cc60a750d94f978e75bcad86b6e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 2980557986029277618, guid: 751c2cc60a750d94f978e75bcad86b6e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7093,6 +7093,57 @@ MonoBehaviour:
   - active: 1
     nextActionPoint: {fileID: 1622142264}
     action: 2
+    dependentDecisions: []
+    deactivateDecisions: []
+    path:
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 3
+      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      point: {fileID: 664299251}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 516320999}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 1273558654}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 1787306278}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 1175921734}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+  - active: 1
+    nextActionPoint: {fileID: 1622142264}
+    action: 8
     dependentDecisions: []
     deactivateDecisions: []
     path:
@@ -8610,6 +8661,48 @@ MonoBehaviour:
   - active: 1
     nextActionPoint: {fileID: 314368375}
     action: 2
+    dependentDecisions: []
+    deactivateDecisions: []
+    path:
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 143522244}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 412652429}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 1
+      activateDependentDecisions: 0
+      speed: 6
+      animation: {fileID: 7400000, guid: 9530489df7cf91943b686a972f8d051e, type: 2}
+      point: {fileID: 978891194}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 3
+      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      point: {fileID: 1706441192}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+  - active: 1
+    nextActionPoint: {fileID: 314368375}
+    action: 8
     dependentDecisions: []
     deactivateDecisions: []
     path:
