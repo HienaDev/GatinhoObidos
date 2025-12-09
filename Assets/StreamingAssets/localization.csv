@@ -7,12 +7,27 @@ interact,interagir,interact,interactuar,interagir
 hide,esconder,hide,esconder,cacher
 scratch,arranhar,scratch,rascar,gratter
 sleep,dormir,sleep,dormir,dormir
-tutorial_direita,"Neste jogo voc� controla o gato escrevendo sua hist�ria, tente digitar 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous contr�lez le chat en �crivant son histoire, essayez de taper 'droite'."
+tutorial_direita,"Neste jogo controlas o gato ao escrever a historia dele, tenta escrever 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous controlez le chat en ecrivant son histoire, essayez de taper 'droite'."
 menu_language,Idioma,Language,Idioma,Langue
-settings,Defini��es,Settings,Definiciones,D�finitions
-glossary,gloss�rio,glossary,glosario,glossaire
+settings,Definicoes,Settings,Definiciones,Definitions
+glossary,glossario,glossary,glosario,glossaire
 up,cima,up,arriba,en haut
 down,baixo,down,abajo,en bas
 awake,acorda,awake,desperta,reveiller
 meow,miau,meow,miau,miau
 pause,pausar,pause,pausa,pause
+music, Musica, Music, Musica, Musique
+sound, Sons, Sounds, Sonidos, Sons
+about,Sobre,About,Acerca,A Propos
+play,Jogar,Play,Jugar,Jouer
+quit,Sair,Quit,Salir,Quitter
+back,Voltar,Back,Volver,Retour
+unlocked_words_phrase,"Podes ver todas as palavras desbloqueadas pressionando Tab a qualquer momento","You can see all your unlocked words by pressing Tab at any moment","Puedes ver todas tus palabras desbloqueadas presionando Tab en cualquier momento","Vous pouvez voir tous vos mots debloques en appuyant sur Tab a tout moment"
+resume,Continuar,Resume,Reanudar,Reprendre
+back_to_main_menu,Voltar Ao Menu Principal,Back To Main Menu,Volver Al Menu Principal,Retour Au Menu Principal
+paused,Pausado,Paused,Pausado,En Pause
+
+
+
+
+

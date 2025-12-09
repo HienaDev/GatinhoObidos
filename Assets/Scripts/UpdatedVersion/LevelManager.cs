@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private Scaler[] scalers;
 
+    [SerializeField] private float letterScale = 1f;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -55,6 +57,7 @@ public class LevelManager : MonoBehaviour
             Transform pos = letterPositions[i];
             LetterPickUp letterObj = Instantiate(letterPrefab, pos.position, Quaternion.identity);
             letterObj.text.color = letterColor;
+            letterObj.transform.localScale *= letterScale;
             LetterPickUp letterPickUp = letterObj.GetComponent<LetterPickUp>();
 
             spawnedLetters.Add(letterObj);

@@ -13,15 +13,15 @@ public class Scaler : MonoBehaviour
 
     void Awake()
     {
-        // Store the original scale
-        _originalScale = transform.localScale;
+        
 
 
     }
 
     void Start()
     {
-
+        // Store the original scale
+        _originalScale = transform.localScale;
         if (playOnStart)
         {
 

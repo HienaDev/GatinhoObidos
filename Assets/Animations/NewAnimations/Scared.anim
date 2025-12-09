@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: medieval_cat_idle_lick
+  m_Name: Scared
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 3abb409dc7ffd8347a9fc97a4f3cd468, type: 3}
+      value: {fileID: 21300000, guid: 43b1c67491648fc40b048631d517d8b8, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 68b08b47eb939da459f54e0dd2d09fd1, type: 3}
+      value: {fileID: 21300000, guid: ba5d58d2e1d4e6145ae3454925fc5538, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 3abb409dc7ffd8347a9fc97a4f3cd468, type: 3}
-    - {fileID: 21300000, guid: 68b08b47eb939da459f54e0dd2d09fd1, type: 3}
+    - {fileID: 21300000, guid: 43b1c67491648fc40b048631d517d8b8, type: 3}
+    - {fileID: 21300000, guid: ba5d58d2e1d4e6145ae3454925fc5538, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -9,6 +9,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public static class LocalizationEvents
 {
@@ -29,6 +30,8 @@ public class Settings : MonoBehaviour
 
     [Header("General Settings")]
     [SerializeField] private GameObject gameMenu;
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject wordsMenu;
     [SerializeField] private Animator wordsMenuAnimator;
@@ -43,6 +46,9 @@ public class Settings : MonoBehaviour
 
     private string csvContent;
     private Dictionary<string, Dictionary<string, string>> localizedData;
+
+    [SerializeField] private AudioMixer music;
+    [SerializeField] private AudioMixer sfx;
     public static string GetText(string key)
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
@@ -70,6 +76,8 @@ public class Settings : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
@@ -94,6 +102,18 @@ public class Settings : MonoBehaviour
         else
             currentLanguage = startingLanguage;
 
+        if(PlayerPrefs.HasKey("MusicVolume"))
+        {
+            float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+            music.SetFloat("Volume", musicVolume);
+        }
+
+        if(PlayerPrefs.HasKey("SFXVolume"))
+        {
+            float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
+            sfx.SetFloat("Volume", sfxVolume);
+        }
+
         StartCoroutine(LoadCSV());
     }
 
@@ -102,15 +122,28 @@ public class Settings : MonoBehaviour
         // This is just to demonstrate that the localization works
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameMenu.SetActive(!gameMenu.activeSelf);
-            aboutMenu.SetActive(false);
-            wordsMenu.SetActive(false);
+            ToggleMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleWordsMenu();
         }
+    }
+
+    public void ToggleMenuAndSoundMenu()
+    {
+        mainMenu.SetActive(!mainMenu.activeSelf);
+        settingsMenu.SetActive(!settingsMenu.activeSelf);
+    }
+
+    public void ToggleMenu()
+    {
+        gameMenu.SetActive(!gameMenu.activeSelf);
+        mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+        aboutMenu.SetActive(false);
+        wordsMenu.SetActive(false);
     }
 
     public void ToggleWordsMenu()

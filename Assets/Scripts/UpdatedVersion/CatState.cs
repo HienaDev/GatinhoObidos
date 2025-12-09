@@ -37,6 +37,8 @@ public class CatState : MonoBehaviour
 
         unlockedActions = LoadUnlockedActions();
 
+
+
         // If no saved actions yet, initialize defaults
         if (unlockedActions.Count == 0)
         {
@@ -49,6 +51,23 @@ public class CatState : MonoBehaviour
 
             SaveUnlockedActions(); // save defaults once
         }
+    }
+
+    public void UnlockAllWords()
+    {
+        UnlockAction(ActionWord.right);
+        UnlockAction(ActionWord.left);
+        UnlockAction(ActionWord.sleep);
+        //UnlockAction(ActionWord.awake);
+        UnlockAction(ActionWord.up);
+        UnlockAction(ActionWord.down);
+        UnlockAction(ActionWord.jump);
+        UnlockAction(ActionWord.scratch);
+        UnlockAction(ActionWord.meow);
+
+        Settings.UpdateUnlockedWordsDisplayGlobal();
+
+        SaveUnlockedActions();
     }
 
     public void ResetGlossary()
@@ -78,6 +97,11 @@ public class CatState : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift)  && Input.GetKeyDown(KeyCode.G))
         {
             ResetGlossary();
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.U))
+        {
+            UnlockAllWords();
         }
     }
 
@@ -130,6 +154,7 @@ public class CatState : MonoBehaviour
         if(normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))
         {
            Debug.Log("Pause command received.");
+            FindAnyObjectByType<Settings>().ToggleMenu();
             return;
         }
 

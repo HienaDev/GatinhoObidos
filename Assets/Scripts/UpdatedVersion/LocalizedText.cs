@@ -16,6 +16,14 @@ public class LocalizedText : MonoBehaviour
         UpdateText(); // Initial update
     }
 
+    private void OnEnable()
+    {
+        textComponent = GetComponent<TextMeshProUGUI>();
+        LocalizationEvents.OnLanguageChanged += UpdateText;
+
+        UpdateText(); // Initial update
+    }
+
     void OnDestroy()
     {
         LocalizationEvents.OnLanguageChanged -= UpdateText;

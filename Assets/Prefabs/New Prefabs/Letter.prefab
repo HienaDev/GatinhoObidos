@@ -167,6 +167,7 @@ MonoBehaviour:
   duration: 1
   easeType: 4
   startImmediately: 1
+  axisX: 0
 --- !u!1 &4294051758765598441
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   duration: 1
   easeType: 4
   startImmediately: 1
+  axisX: 0
 --- !u!1 &8107743754764174300
 GameObject:
   m_ObjectHideFlags: 0
