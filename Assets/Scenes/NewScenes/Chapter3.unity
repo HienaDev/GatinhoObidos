@@ -690,7 +690,7 @@ MonoBehaviour:
             m_CallState: 2
     - rotate: 1
       activateDependentDecisions: 0
-      speed: 0.01
+      speed: 0.002
       animation: {fileID: 7400000, guid: 92b8c042b9a451f4a82637589673aef1, type: 2}
       point: {fileID: 1577814151}
       hasEvent: 1
@@ -8547,7 +8547,7 @@ Transform:
   m_GameObject: {fileID: 1577814150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014, y: 0, z: 0}
+  m_LocalPosition: {x: 0.023, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

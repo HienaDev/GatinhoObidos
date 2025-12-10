@@ -102,17 +102,6 @@ public class Settings : MonoBehaviour
         else
             currentLanguage = startingLanguage;
 
-        if(PlayerPrefs.HasKey("MusicVolume"))
-        {
-            float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
-            music.SetFloat("Volume", musicVolume);
-        }
-
-        if(PlayerPrefs.HasKey("SFXVolume"))
-        {
-            float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
-            sfx.SetFloat("Volume", sfxVolume);
-        }
 
         StartCoroutine(LoadCSV());
     }
