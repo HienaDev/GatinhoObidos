@@ -7,7 +7,7 @@ interact,interagir,interact,interactuar,interagir
 hide,esconder,hide,esconder,cacher
 scratch,arranhar,scratch,rascar,gratter
 sleep,dormir,sleep,dormir,dormir
-tutorial_direita,"Neste jogo controlas o gato ao escrever a historia dele, tenta escrever 'direita'.","In this game you control the cat by writing its story, try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous controlez le chat en ecrivant son histoire, essayez de taper 'droite'."
+tutorial_direita,"Controlas o gato ao escrever a historia dele. Tenta escrever 'direita'.","Control the cat by writing its story. Try typing 'right'.","En este juego controlas al gato escribiendo su historia, intenta escribir 'derecha'.","Dans ce jeu, vous controlez le chat en ecrivant son histoire, essayez de taper 'droite'."
 menu_language,Idioma,Language,Idioma,Langue
 settings,Definicoes,Settings,Definiciones,Definitions
 glossary,glossario,glossary,glosario,glossaire
@@ -24,10 +24,7 @@ quit,Sair,Quit,Salir,Quitter
 back,Voltar,Back,Volver,Retour
 unlocked_words_phrase,"Podes ver todas as palavras desbloqueadas pressionando Tab a qualquer momento","You can see all your unlocked words by pressing Tab at any moment","Puedes ver todas tus palabras desbloqueadas presionando Tab en cualquier momento","Vous pouvez voir tous vos mots debloques en appuyant sur Tab a tout moment"
 resume,Continuar,Resume,Reanudar,Reprendre
-back_to_main_menu,Voltar Ao Menu Principal,Back To Main Menu,Volver Al Menu Principal,Retour Au Menu Principal
+back_to_main_menu,Menu Principal,Main Menu,Menu Principal,Menu Principal
 paused,Pausado,Paused,Pausado,En Pause
-
-
-
-
-
+unlock_new_words,"Desbloqueia novas palavras ao coletar letras!","Unlock new words by collecting letters!","Desbloquea nuevas palabras al recolectar letras!","Debloquez de nouveaux mots en collectant des lettres!"
+sleep_story_phrase,"Vou te contar uma historia para adormecer","I will tell you a story to help you fall asleep","Te voy a contar una historia para dormir","Je vais te raconter une histoire pour t endormir"

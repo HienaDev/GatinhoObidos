@@ -4,6 +4,7 @@ using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityEngine.GraphicsBuffer;
 
 public class LevelManager : MonoBehaviour
@@ -34,6 +35,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Scaler[] scalers;
 
     [SerializeField] private float letterScale = 1f;
+
+    [SerializeField] private UnityEvent onCollectingFirstLetter;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -108,7 +111,13 @@ public class LevelManager : MonoBehaviour
 
     public void CollectLetter(int index)
     {
-        if(missingLetters.Contains(index))
+
+        if(lettersCollected == 0)
+        {
+            onCollectingFirstLetter.Invoke();
+        }
+
+        if (missingLetters.Contains(index))
         {
             lettersCollected++;
             wordMissingUI.text = ReplaceLetter(wordMissingUI.text, index, missingWordLocalized[index]);

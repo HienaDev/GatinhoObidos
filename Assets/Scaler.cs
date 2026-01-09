@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Scaler : MonoBehaviour
 {
@@ -11,12 +12,10 @@ public class Scaler : MonoBehaviour
 
     private Vector3 _originalScale;
 
-    void Awake()
-    {
-        
+    [SerializeField] private bool deactiveOnKey = false;
+    [SerializeField] private KeyCode keyToDeactivate = KeyCode.Tab;
 
-
-    }
+    [SerializeField] private UnityEvent onScaleComplete;
 
     void Start()
     {
@@ -44,6 +43,14 @@ public class Scaler : MonoBehaviour
 
     public void ScaleDown()
     {
-        transform.DOScale(Vector3.zero, duration).SetEase(easeType);
+        transform.DOScale(Vector3.zero, duration).SetEase(easeType).OnComplete(() => onScaleComplete.Invoke());
+    }
+
+    private void Update()
+    {
+        if(deactiveOnKey && Input.GetKeyDown(keyToDeactivate))
+        {
+            ScaleDown();
+        }
     }
 }
