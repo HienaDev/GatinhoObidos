@@ -14,6 +14,8 @@ public class VolumeSliderController : MonoBehaviour
     [SerializeField] private string PlayerPrefsKey = "MasterVolumeValue";
 
 
+    [SerializeField] private AudioClip[] testSounds;
+
     void Start()
     {
         // Load saved volume or default to 0.75 if none exists
@@ -33,7 +35,15 @@ public class VolumeSliderController : MonoBehaviour
         // Listen for slider changes
         volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
 
+  
+    }
 
+    public void PlayTestSound()
+    {
+        if (testSounds.Length > 0)
+        {
+            GetComponent<AudioSource>().PlayOneShot(testSounds[Random.Range(0, testSounds.Length)]);
+        }
     }
 
     private void OnSliderValueChanged(float value)
@@ -53,6 +63,8 @@ public class VolumeSliderController : MonoBehaviour
 
         mixer.GetFloat(volumeParameter, out float checkValue);
         Debug.Log("Mixer stored this: " + checkValue);
+
+        
 
     }
 }

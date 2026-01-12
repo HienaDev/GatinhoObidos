@@ -151,7 +151,29 @@ public class CatState : MonoBehaviour
 
         normalizedInput.Replace("_", " "); // allow underscores as spaces
 
-        if(normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))
+        Debug.Log("Normalized input: " + normalizedInput);
+
+        if (normalizedInput.Equals("hub", StringComparison.OrdinalIgnoreCase))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+        }
+
+        if (normalizedInput.Equals("level_one", StringComparison.OrdinalIgnoreCase))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter1");
+        }
+
+        if (normalizedInput.Equals("level_two", StringComparison.OrdinalIgnoreCase))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter2");
+        }
+
+        if (normalizedInput.Equals("level_three", StringComparison.OrdinalIgnoreCase))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
+        }
+
+        if (normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))
         {
            Debug.Log("Pause command received.");
             FindAnyObjectByType<Settings>().ToggleMenu();
@@ -194,6 +216,16 @@ public class CatState : MonoBehaviour
                     StartCoroutine(TurnOnObjectTimer(confused, 2f));
                     Debug.LogWarning("Action not unlocked: " + decisionName);
                     return;
+                }
+
+                if(confused.activeSelf)
+                {
+                    confused.SetActive(false);
+                }
+
+                if(blocked.activeSelf)
+                {
+                    blocked.SetActive(false);
                 }
 
                 // Perform the action
@@ -270,7 +302,8 @@ public class CatState : MonoBehaviour
                            .AsyncWaitForCompletion();
 
             // Reset rotation back to neutral
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
             // --- Invoke UnityEvent ---
             if (point.hasEvent && point.onReachPoint != null)

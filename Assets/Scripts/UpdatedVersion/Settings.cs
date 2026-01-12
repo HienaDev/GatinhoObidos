@@ -108,6 +108,14 @@ public class Settings : MonoBehaviour
 
     private void Update()
     {
+
+        
+        // Chjeck if current scene is main menu
+        if(SceneManager.GetActiveScene().name == "NewMainMenu")
+        {
+            return;
+        }
+
         // This is just to demonstrate that the localization works
         if (Input.GetKeyDown(KeyCode.Escape))
         {

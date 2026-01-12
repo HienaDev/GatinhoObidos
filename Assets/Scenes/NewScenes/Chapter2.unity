@@ -8516,6 +8516,9 @@ MonoBehaviour:
   - {fileID: 156895382}
   - {fileID: 5260760906679985648}
   letterScale: 1
+  onCollectingFirstLetter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1383792771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10046,6 +10049,11 @@ MonoBehaviour:
   duration: 0.5
   easeType: 27
   playOnStart: 1
+  deactiveOnKey: 0
+  keyToDeactivate: 9
+  onScaleComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1706441191
 GameObject:
   m_ObjectHideFlags: 0
@@ -17917,6 +17925,11 @@ MonoBehaviour:
   duration: 0.5
   easeType: 27
   playOnStart: 1
+  deactiveOnKey: 0
+  keyToDeactivate: 9
+  onScaleComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8489889250781995152
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < spawnedLetters.Count; i++)
         {
-            if (spawnedLetters[i] != null)
+            if (spawnedLetters[i].isActiveAndEnabled)
             {
                 // Use shuffled indices instead of random.Range
                 char randomLetter = missingWordStr[availableIndices[i]];
