@@ -89,9 +89,10 @@ public class LevelManager : MonoBehaviour
             (availableIndices[i], availableIndices[swapIndex]) = (availableIndices[swapIndex], availableIndices[i]);
         }
 
+        
         for (int i = 0; i < spawnedLetters.Count; i++)
         {
-            if (spawnedLetters[i].isActiveAndEnabled)
+            if (spawnedLetters[i].gameObject.activeSelf)
             {
                 // Use shuffled indices instead of random.Range
                 char randomLetter = missingWordStr[availableIndices[i]];

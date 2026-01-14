@@ -591,17 +591,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &58985764 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5934861881752089593, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-  m_PrefabInstance: {fileID: 7671389493441945572}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2162ec66e59484bb1178236ff1bac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &62325834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7352,7 +7341,7 @@ MonoBehaviour:
   currentLevelName: Quarto Princesa
   wordMissingUI: {fileID: 904968528}
   scalers:
-  - {fileID: 58985764}
+  - {fileID: 7671389493441945573}
   - {fileID: 1985015955}
   letterScale: 0.65
   onCollectingFirstLetter:
@@ -11561,6 +11550,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+--- !u!114 &7671389493441945573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2656752597075631486, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+  m_PrefabInstance: {fileID: 7671389493441945572}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2162ec66e59484bb1178236ff1bac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

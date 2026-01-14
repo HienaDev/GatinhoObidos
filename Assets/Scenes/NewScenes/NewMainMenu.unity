@@ -1334,7 +1334,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &454718106
+--- !u!1001 &473759885
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1342,18 +1342,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 55757507386288770, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 55757507386288770, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 55757507386288770, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 218656230613365375, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.220209
@@ -1394,36 +1382,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 795758392084374573, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 795758392084374573, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 795758392084374573, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1212697918416634739, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_Name
       value: Game Settings
       objectReference: {fileID: 0}
-    - target: {fileID: 7620531337748466396, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7620531337748466396, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209526032454440030, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209526032454440030, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 5934861881752089593, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: playOnStart
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6937,7 +6901,7 @@ SceneRoots:
   - {fileID: 797940629}
   - {fileID: 1982286041}
   - {fileID: 731013906}
+  - {fileID: 473759885}
   - {fileID: 1291122562}
   - {fileID: 239399182}
-  - {fileID: 454718106}
   - {fileID: 192193118}

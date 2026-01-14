@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;  
 
 public class Scaler : MonoBehaviour
 {
@@ -23,8 +24,17 @@ public class Scaler : MonoBehaviour
         _originalScale = transform.localScale;
         if (playOnStart)
         {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            transform.localScale = Vector3.zero;
+           Play();
+        }
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (playOnStart)
+        {
 
-           transform.localScale = Vector3.zero;
+            transform.localScale = Vector3.zero;
             Play();
         }
     }
