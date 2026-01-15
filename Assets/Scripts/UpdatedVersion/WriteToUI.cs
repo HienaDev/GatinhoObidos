@@ -116,14 +116,8 @@ public class WriteToUI : MonoBehaviour
 
                 if (!UIHidden)
                 {
-                UIHidden = true;
-                transform.DOScale(0f, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
-                {
-                    outlineUI.color = outlineColorTransparent;
-                    backgroundUI.color = backgroundColorTransparent;
-                    textUI.color = textColorTransparent;
-                    UIHidden = true;
-                });
+
+                HideUI();
                 }
             
 
@@ -210,6 +204,18 @@ public class WriteToUI : MonoBehaviour
 
 
 
+    }
+
+    public void HideUI()
+    {
+        UIHidden = true;
+        transform.DOScale(0f, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
+        {
+            outlineUI.color = outlineColorTransparent;
+            backgroundUI.color = backgroundColorTransparent;
+            textUI.color = textColorTransparent;
+            UIHidden = true;
+        });
     }
 
     public string GetWord() => wordForPlatforms;

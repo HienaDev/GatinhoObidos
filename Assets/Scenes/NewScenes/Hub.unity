@@ -1630,9 +1630,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1151251596}
-            m_TargetAssemblyTypeName: Scaler, Assembly-CSharp
-            m_MethodName: ScaleDown
+          - m_Target: {fileID: 410860441}
+            m_TargetAssemblyTypeName: RemoveNotebook, Assembly-CSharp
+            m_MethodName: HideNotebook
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1642,9 +1642,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 410860441}
-            m_TargetAssemblyTypeName: RemoveNotebook, Assembly-CSharp
-            m_MethodName: HideNotebook
+          - m_Target: {fileID: 5260760906679985645}
+            m_TargetAssemblyTypeName: WriteToUI, Assembly-CSharp
+            m_MethodName: HideUI
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -3112,7 +3112,7 @@ MonoBehaviour:
     path:
     - rotate: 0
       activateDependentDecisions: 0
-      speed: 6
+      speed: 3
       animation: {fileID: 7400000, guid: 8d7431dea4b980c4f8e3403aa2c6d662, type: 2}
       point: {fileID: 277344373}
       hasEvent: 1
@@ -4469,10 +4469,22 @@ MonoBehaviour:
       speed: 6
       animation: {fileID: 7400000, guid: 9bd65223c6606594f8e15d9bcbe63df1, type: 2}
       point: {fileID: 76719385}
-      hasEvent: 0
+      hasEvent: 1
       onReachPoint:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 1151251596}
+            m_TargetAssemblyTypeName: Scaler, Assembly-CSharp
+            m_MethodName: ScaleDown
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   lineWidth: 0.2
   lineHeight: 0.5
   lineColor: {r: 1, g: 0, b: 0, a: 1}
