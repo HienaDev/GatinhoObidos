@@ -1,9 +1,10 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class WriteToUI : MonoBehaviour
 {
@@ -79,8 +80,8 @@ public class WriteToUI : MonoBehaviour
     void Start()
     {
 
-        
 
+        transform.localScale = Vector3.zero;
         textUI = GetComponentInChildren<TextMeshProUGUI>();
         textColor = textUI.color;
         textColorTransparent = new Color32((byte)(outlineUI.color.r * 255), (byte)(outlineUI.color.g * 255), (byte)(outlineUI.color.b * 255), 0);
