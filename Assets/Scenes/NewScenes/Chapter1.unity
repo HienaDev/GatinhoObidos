@@ -717,7 +717,7 @@ Transform:
   m_GameObject: {fileID: 184766452}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.16, y: 0, z: 0}
+  m_LocalPosition: {x: 6.44, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11253,7 +11253,7 @@ Transform:
   m_GameObject: {fileID: 1822123504}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69, y: 0, z: 0}
+  m_LocalPosition: {x: 3.81, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11622,7 +11622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45d3feaf7a8cfd49af94cd7c57c3a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingActionPoint: {fileID: 160149382}
+  startingActionPoint: {fileID: 445845992}
   speed: 3
   moving: 0
   idleAnimation: {fileID: 7400000, guid: daacd6df71fe40248a5058c2a81ec1b3, type: 2}

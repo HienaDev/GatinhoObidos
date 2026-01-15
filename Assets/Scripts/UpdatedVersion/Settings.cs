@@ -275,7 +275,7 @@ public class Settings : MonoBehaviour
         }
 
         Debug.Log("Dictionary built!");
-        Debug.Log("Portuguese[right] = " + localizedData["Portugues"]["right"]);
+        Debug.Log("Portuguese[right] = " + localizedData["Português"]["right"]);
         Debug.Log("English[right] = " + localizedData["English"]["right"]);
         //Debug.Log("Spanish[right] = " + localizedData["Espanol"]["right"]);
 
@@ -367,7 +367,7 @@ public class Settings : MonoBehaviour
         string data = PlayerPrefs.GetString("UnlockedActions", "");
         if (string.IsNullOrEmpty(data))
         {
-            unlockedWordsText.text = "Unlocked Words:\n<None>";
+            unlockedWordsText.text = "\n";
             return;
         }
 
@@ -389,7 +389,7 @@ public class Settings : MonoBehaviour
             }
         }
 
-        unlockedWordsText.text = "Unlocked Words:\n" + string.Join("\n", localizedWords);
+        unlockedWordsText.text = "\n" + string.Join("\n", localizedWords);
     }
 
 }
