@@ -26,7 +26,7 @@ public class Settings : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI unlockedWordsText;
 
-    private static Settings instance;
+    public static Settings instance;
 
     [Header("General Settings")]
     [SerializeField] private GameObject gameMenu;
@@ -34,6 +34,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject wordsMenu;
+    [SerializeField] private GameObject popUpConfirmation;
     [SerializeField] private Animator wordsMenuAnimator;
 
     [Header("Localization Settings")]
@@ -42,7 +43,7 @@ public class Settings : MonoBehaviour
     public string csvFileName = "localization.csv";
     [SerializeField] private TMP_Dropdown languageDropdown;
 
-    [SerializeField] private Scaler scalerBlock;
+    [SerializeField] public Scaler scalerBlock;
 
     private string csvContent;
     private Dictionary<string, Dictionary<string, string>> localizedData;
@@ -87,8 +88,31 @@ public class Settings : MonoBehaviour
         
         if(wordsMenu != null) wordsMenu.SetActive(false);
 
-        if(scalerBlock != null)
+
+        if(scene.name == "NewMainMenu")
+        {
+            scalerBlock.transform.localScale = Vector3.zero;
+        }
+        else
+        {
             scalerBlock.Play();
+        }
+
+        //if(scalerBlock != null && scene.name != "NewMainMenu")
+        //{
+        //    Debug.Log("Playing scalerBlock animation on scene load");
+        //    scalerBlock.Play();
+        //}
+        //else
+        //{
+        //    Debug.Log(scalerBlock != null ? "In Main Menu scene" : "scalerBlock is null scene");
+        //    if(scalerBlock != null)
+        //        scalerBlock.transform.localScale = Vector3.zero;
+        //    Debug.Log("scalerBlock is null or in Main Menu scene");
+        //}
+
+        //Debug.Log("Scene loaded: " + scene.name);
+
     }
 
 
@@ -113,6 +137,13 @@ public class Settings : MonoBehaviour
         // Chjeck if current scene is main menu
         if(SceneManager.GetActiveScene().name == "NewMainMenu")
         {
+            if (Input.GetKeyDown(KeyCode.Escape) && gameMenu.activeSelf)
+            {
+                Debug.Log("Escape pressed in Main Menu");
+                ToggleSettingsMenu();
+            }
+               
+
             return;
         }
 
@@ -128,14 +159,38 @@ public class Settings : MonoBehaviour
         }
     }
 
+    public void TogglePopUp()
+    {
+        popUpConfirmation.SetActive(!popUpConfirmation.activeSelf);
+    }
+
     public void ToggleMenuAndSoundMenu()
     {
-        mainMenu.SetActive(!mainMenu.activeSelf);
+        if (!(SceneManager.GetActiveScene().name == "NewMainMenu"))
+            mainMenu.SetActive(!mainMenu.activeSelf);
+        else
+        {
+            gameMenu.SetActive(false);
+            mainMenu.SetActive(false);
+        }
+                        
         settingsMenu.SetActive(!settingsMenu.activeSelf);
+    }
+
+    public void ToggleSettingsMenu()
+    {
+        popUpConfirmation.SetActive(false);
+        settingsMenu.SetActive(true);
+        gameMenu.SetActive(!gameMenu.activeSelf);
+        mainMenu.SetActive(false);
+        aboutMenu.SetActive(false);
+        wordsMenu.SetActive(false);
     }
 
     public void ToggleMenu()
     {
+
+        popUpConfirmation.SetActive(false);
         gameMenu.SetActive(!gameMenu.activeSelf);
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
@@ -222,7 +277,7 @@ public class Settings : MonoBehaviour
         Debug.Log("Dictionary built!");
         Debug.Log("Portuguese[right] = " + localizedData["Portugues"]["right"]);
         Debug.Log("English[right] = " + localizedData["English"]["right"]);
-        Debug.Log("Spanish[right] = " + localizedData["Espanol"]["right"]);
+        //Debug.Log("Spanish[right] = " + localizedData["Espanol"]["right"]);
 
         InitiateDropdown();
     }
@@ -260,6 +315,9 @@ public class Settings : MonoBehaviour
 
         // Create a list of strings
         List<string> options = new List<string>(localizedData.Keys.ToList());
+
+        //options.Remove("Espanol"); // Remove Spanish option
+        //options.Remove("Francais"); // Remove French option)
 
         // Add them to the dropdown
         languageDropdown.AddOptions(options);

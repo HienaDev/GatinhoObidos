@@ -161,16 +161,28 @@ public class CatState : MonoBehaviour
         if (normalizedInput.Equals("level_one", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter1");
+            ResetGlossary();
+            UnlockAction(ActionWord.sleep);
+            Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 
         if (normalizedInput.Equals("level_two", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter2");
+            ResetGlossary();
+            UnlockAction(ActionWord.sleep);
+            UnlockAction(ActionWord.scratch);
+            Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 
         if (normalizedInput.Equals("level_three", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
+            ResetGlossary();
+            UnlockAction(ActionWord.sleep);
+            UnlockAction(ActionWord.scratch);
+            UnlockAction(ActionWord.jump);
+            Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 
         if (normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))

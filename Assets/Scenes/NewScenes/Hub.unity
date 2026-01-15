@@ -736,7 +736,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a46fc54f5dbc53c47b0aa7b66e82b71c, type: 2}
   m_audioClip: {fileID: 8300000, guid: ff52021ee132b26478dd57abbdee09ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.09
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1566,6 +1566,7 @@ GameObject:
   - component: {fileID: 410860439}
   - component: {fileID: 410860438}
   - component: {fileID: 410860440}
+  - component: {fileID: 410860441}
   m_Layer: 0
   m_Name: Start L/S/A - Action Point
   m_TagString: Untagged
@@ -1632,6 +1633,18 @@ MonoBehaviour:
           - m_Target: {fileID: 1151251596}
             m_TargetAssemblyTypeName: Scaler, Assembly-CSharp
             m_MethodName: ScaleDown
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 410860441}
+            m_TargetAssemblyTypeName: RemoveNotebook, Assembly-CSharp
+            m_MethodName: HideNotebook
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1747,6 +1760,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelName: Chapter1
+--- !u!114 &410860441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410860437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d65fef753180f44aceaa05abb8c5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &414530402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,17 +3958,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
---- !u!114 &931054342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2656752597075631486, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-  m_PrefabInstance: {fileID: 931054341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2162ec66e59484bb1178236ff1bac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &973283640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,7 +6593,7 @@ MonoBehaviour:
   scalers:
   - {fileID: 340519979}
   - {fileID: 1862415508}
-  - {fileID: 931054342}
+  - {fileID: 0}
   - {fileID: 1785493521}
   - {fileID: 5260760906679985648}
   letterScale: 1

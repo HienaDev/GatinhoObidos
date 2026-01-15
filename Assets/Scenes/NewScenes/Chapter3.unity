@@ -601,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62325835}
   - component: {fileID: 62325836}
+  - component: {fileID: 62325837}
   m_Layer: 0
   m_Name: Start R/L - Action Point (4)
   m_TagString: Untagged
@@ -677,6 +678,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 62325837}
+            m_TargetAssemblyTypeName: RemoveNotebook, Assembly-CSharp
+            m_MethodName: HideNotebook
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - rotate: 1
       activateDependentDecisions: 0
       speed: 0.002
@@ -743,6 +756,18 @@ MonoBehaviour:
   pathOffset: 0.25
   labelSpacing: 0.5
   labelVerticalOffset: 0.12
+--- !u!114 &62325837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62325834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d65fef753180f44aceaa05abb8c5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &71913063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2372,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1075175115}
+  - {fileID: 596603211}
   m_Father: {fileID: 1908188019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &339204642
@@ -4417,6 +4443,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596603210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596603211}
+  m_Layer: 0
+  m_Name: Waypoint 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596603211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596603210}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.367, y: 4.793, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 339204641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612085596
 GameObject:
@@ -7341,7 +7398,7 @@ MonoBehaviour:
   currentLevelName: Quarto Princesa
   wordMissingUI: {fileID: 904968528}
   scalers:
-  - {fileID: 7671389493441945573}
+  - {fileID: 0}
   - {fileID: 1985015955}
   letterScale: 0.65
   onCollectingFirstLetter:
@@ -7729,10 +7786,33 @@ MonoBehaviour:
     deactivateDecisions:
     - actionPoint: {fileID: 363846114}
       action: 13
+    - actionPoint: {fileID: 1468048254}
+      action: 12
     path:
     - rotate: 1
       activateDependentDecisions: 1
-      speed: 3
+      speed: 0.03
+      animation: {fileID: 7400000, guid: bd5f1b7c23bcf8c4ab7b0c01dff2d846, type: 2}
+      point: {fileID: 1622371022}
+      hasEvent: 1
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6757948}
+            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - rotate: 1
+      activateDependentDecisions: 1
+      speed: 0.05
       animation: {fileID: 7400000, guid: bd5f1b7c23bcf8c4ab7b0c01dff2d846, type: 2}
       point: {fileID: 2086607776}
       hasEvent: 1
@@ -7767,18 +7847,6 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_MethodName: SetActive
             m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-          - m_Target: {fileID: 6757948}
-            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-            m_MethodName: Play
-            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8439,6 +8507,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1622371022}
   - {fileID: 2086607776}
   m_Father: {fileID: 1468048255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8739,6 +8808,37 @@ MonoBehaviour:
   lineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pointColor: {r: 1, g: 0, b: 0, a: 1}
   pointRadius: 0.2
+--- !u!1 &1622371021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622371022}
+  m_Layer: 0
+  m_Name: Waypoint 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1622371022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622371021}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1551617810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1649377662
 GameObject:
   m_ObjectHideFlags: 0
@@ -9128,7 +9228,7 @@ Transform:
   m_GameObject: {fileID: 1734502000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.301, y: -0.094, z: 0}
+  m_LocalPosition: {x: -2.63, y: -0.094, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9750,6 +9850,15 @@ MonoBehaviour:
       speed: 3
       animation: {fileID: 7400000, guid: 8d7431dea4b980c4f8e3403aa2c6d662, type: 2}
       point: {fileID: 1075175115}
+      hasEvent: 0
+      onReachPoint:
+        m_PersistentCalls:
+          m_Calls: []
+    - rotate: 0
+      activateDependentDecisions: 0
+      speed: 3
+      animation: {fileID: 7400000, guid: b1a610ffbca87ee439b105147de795ab, type: 2}
+      point: {fileID: 596603211}
       hasEvent: 0
       onReachPoint:
         m_PersistentCalls:
@@ -11061,7 +11170,7 @@ Transform:
   m_GameObject: {fileID: 2086607775}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.04, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11550,17 +11659,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
---- !u!114 &7671389493441945573 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2656752597075631486, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
-  m_PrefabInstance: {fileID: 7671389493441945572}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2162ec66e59484bb1178236ff1bac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

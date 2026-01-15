@@ -92,6 +92,11 @@ public class LevelManager : MonoBehaviour
         
         for (int i = 0; i < spawnedLetters.Count; i++)
         {
+            if(spawnedLetters[i] == null)
+            {
+                Debug.LogError("Spawned letter is null");
+                continue;
+            }
             if (spawnedLetters[i].gameObject.activeSelf)
             {
                 // Use shuffled indices instead of random.Range

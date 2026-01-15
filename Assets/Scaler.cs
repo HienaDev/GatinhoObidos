@@ -18,17 +18,34 @@ public class Scaler : MonoBehaviour
 
     [SerializeField] private UnityEvent onScaleComplete;
 
+
+    private void Awake()
+    {
+
+        _originalScale = transform.localScale;
+    }
+
     void Start()
     {
         // Store the original scale
-        _originalScale = transform.localScale;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        transform.localScale = Vector3.zero;
         if (playOnStart)
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-            transform.localScale = Vector3.zero;
+            
            Play();
         }
     }
+
+    private void OnEnable()
+    {
+        if (playOnStart)
+        {
+
+            Play();
+        }
+    }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (playOnStart)
