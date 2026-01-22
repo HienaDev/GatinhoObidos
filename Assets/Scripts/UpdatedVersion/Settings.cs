@@ -268,8 +268,8 @@ public class Settings : MonoBehaviour
             for (int j = 1; j < headers.Length; j++)
             {
                 string lang = headers[j].Trim();
-                string value = parts[j].Trim().Trim('"'); // remove quotes
-
+                string value = parts[j].Trim().Trim('"');
+                value = value.Replace("\\n", "\n");
                 localizedData[lang][key] = value;
             }
         }
