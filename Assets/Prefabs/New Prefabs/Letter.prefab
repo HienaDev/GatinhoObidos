@@ -521,7 +521,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 2
   easeType: 27
-  playOnStart: 1
+  playOnStart: 0
+  deactiveOnKey: 0
+  keyToDeactivate: 9
+  onScaleComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3309558943702944200
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ public class CatState : MonoBehaviour
             //unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
+            unlockedActions.Add(ActionWord.ok);
 
             SaveUnlockedActions(); // save defaults once
         }
@@ -61,6 +62,7 @@ public class CatState : MonoBehaviour
         //UnlockAction(ActionWord.awake);
         UnlockAction(ActionWord.up);
         UnlockAction(ActionWord.down);
+        UnlockAction(ActionWord.ok);
         UnlockAction(ActionWord.jump);
         UnlockAction(ActionWord.scratch);
         UnlockAction(ActionWord.meow);
@@ -85,6 +87,7 @@ public class CatState : MonoBehaviour
             //unlockedActions.Add(ActionWord.awake);
             unlockedActions.Add(ActionWord.up);
             unlockedActions.Add(ActionWord.down);
+            unlockedActions.Add(ActionWord.ok);
 
             SaveUnlockedActions(); // save defaults once
         }

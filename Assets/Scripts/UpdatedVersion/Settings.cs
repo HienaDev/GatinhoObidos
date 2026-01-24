@@ -1,15 +1,19 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
-using System;
+using TMPro;
 using Unity.VisualScripting;
-using UnityEngine.PlayerLoop;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.PlayerLoop;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
+using NaughtyAttributes;
 
 public static class LocalizationEvents
 {
@@ -50,6 +54,8 @@ public class Settings : MonoBehaviour
 
     [SerializeField] private AudioMixer music;
     [SerializeField] private AudioMixer sfx;
+
+    [SerializeField] private Volume blurEffect;
     public static string GetText(string key)
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
@@ -88,14 +94,19 @@ public class Settings : MonoBehaviour
         
         if(wordsMenu != null) wordsMenu.SetActive(false);
 
+        scalerBlock.transform.localScale = Vector3.zero;
 
-        if(scene.name == "NewMainMenu")
+        if (scene.name == "NewMainMenu")
         {
-            scalerBlock.transform.localScale = Vector3.zero;
+            
         }
-        else
+        else if (scene.name == "Hub")
         {
-            scalerBlock.Play();
+            ScaleWordbook();
+        }
+        else if (scene.name != "Hub")
+        {
+            ResetBlur();
         }
 
         //if(scalerBlock != null && scene.name != "NewMainMenu")
@@ -115,6 +126,10 @@ public class Settings : MonoBehaviour
 
     }
 
+    public void ScaleWordbook()
+    {
+        scalerBlock.Play();
+    }
 
     void Start()
     {
@@ -198,10 +213,37 @@ public class Settings : MonoBehaviour
         wordsMenu.SetActive(false);
     }
 
+
     public void ToggleWordsMenu()
     {
         wordsMenu.SetActive(!wordsMenu.activeSelf);
         wordsMenuAnimator.SetBool("Writing", false);
+    }
+
+    [Button]
+    public void TurnBlurOff()
+    {
+        DepthOfField dof;
+        // Tween over Focal Length variable of the Depth of Field effect
+        blurEffect.profile.TryGet(out dof);
+
+        // Tween focal length from 10 to 60 over 2 seconds
+        DOTween.To(
+            () => dof.focalLength.value,
+            x => dof.focalLength.value = x,
+            0f,
+            2f
+        );
+    }
+
+    public void ResetBlur()
+    {
+        Debug.Log("Resetting blur effect");
+        DepthOfField dof;
+        // Tween over Focal Length variable of the Depth of Field effect
+        blurEffect.profile.TryGet(out dof);
+
+        dof.focalLength.value = 300f;
     }
 
     IEnumerator LoadCSV()
@@ -378,6 +420,7 @@ public class Settings : MonoBehaviour
         foreach (string action in actions)
         {
             if (string.IsNullOrEmpty(action)) continue;
+            if(action == ActionWord.ok.ToString()) continue; // Skip "ok" action
 
             try
             {

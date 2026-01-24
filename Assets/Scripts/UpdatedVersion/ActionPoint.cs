@@ -20,6 +20,7 @@ public enum ActionWord
     awake,
     meow,
     right2,
+    ok,
 }
 
 [System.Serializable]

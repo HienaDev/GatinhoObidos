@@ -38,12 +38,15 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private UnityEvent onCollectingFirstLetter;
 
+    private WriteToUI writeToUI;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
-
+        Settings.instance.ResetBlur();
         yield return new WaitForSeconds(0.1f); // Wait for Settings to initialize
 
+        writeToUI = FindAnyObjectByType<WriteToUI>();
         wordCollectTarget = Camera.main.ScreenToWorldPoint(FindAnyObjectByType<TAG_WORDS>().transform.position);
         noteBookAnimator = FindAnyObjectByType<TAG_WORDS>().GetComponent<Animator>();
 
@@ -70,6 +73,26 @@ public class LevelManager : MonoBehaviour
         UpdateLetters();
 
         LocalizationEvents.OnLanguageChanged += UpdateLetters;
+    }
+
+    [ContextMenu("Level Ready")]
+    public void LevelReady()
+    {
+        writeToUI.ReadyToReveal();
+        writeToUI.ShowUI();
+
+        foreach ( LetterPickUp letter in spawnedLetters)
+        {
+            letter.GetComponent<Scaler>().Play();
+        }
+
+        foreach (Scaler s in scalers)
+        {
+            s.Play();
+        }
+
+        Settings.instance.ScaleWordbook();
+        Settings.instance.TurnBlurOff();
     }
 
     private void UpdateLetters()
@@ -187,6 +210,14 @@ public class LevelManager : MonoBehaviour
         foreach(Scaler s in scalers)
         {
             s.ScaleDown();
+        }
+    }
+
+    public void ScaleUIUp()
+    {
+        foreach (Scaler s in scalers)
+        {
+            s.Play();
         }
     }
 }

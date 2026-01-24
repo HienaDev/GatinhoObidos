@@ -45,7 +45,7 @@ public class WriteToUI : MonoBehaviour
     private bool UIHidden = true;
     private Vector3 originalScale;
 
-   
+   private bool readyToReveal = false;
 
     void OnGUI()
     {
@@ -206,6 +206,11 @@ public class WriteToUI : MonoBehaviour
 
     }
 
+    public void ReadyToReveal()
+    {
+        readyToReveal = true;
+    }
+
     public void HideUI()
     {
         UIHidden = true;
@@ -216,6 +221,14 @@ public class WriteToUI : MonoBehaviour
             textUI.color = textColorTransparent;
             UIHidden = true;
         });
+    }
+
+    public void ShowUI()
+    {
+        UIHidden = false;
+        Debug.Log("Show UI called, scaling to: " + originalScale);
+        transform.localScale = Vector3.zero;
+        transform.DOScale(originalScale, 0.5f).SetEase(Ease.OutBack);
     }
 
     public string GetWord() => wordForPlatforms;
