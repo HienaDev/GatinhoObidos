@@ -106,6 +106,11 @@ public class CatState : MonoBehaviour
         {
             UnlockAllWords();
         }
+
+        if(Input.GetKeyDown(KeyCode.F10))
+        {
+            ToggleUI();
+        }
     }
 
     public void UnlockAction(ActionWord action)
@@ -146,6 +151,18 @@ public class CatState : MonoBehaviour
         return result;
     }
 
+    public void ToggleUI()
+    {
+        Canvas[] canvas = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+
+        foreach (Canvas c in canvas)
+        {
+            if(c.gameObject.activeSelf)
+                c.enabled = !c.enabled;
+        }
+    }
+
+
     public void CheckInput(string input)
     {
 
@@ -155,6 +172,7 @@ public class CatState : MonoBehaviour
         normalizedInput.Replace("_", " "); // allow underscores as spaces
 
         Debug.Log("Normalized input: " + normalizedInput);
+
 
         if (normalizedInput.Equals("hub", StringComparison.OrdinalIgnoreCase))
         {
