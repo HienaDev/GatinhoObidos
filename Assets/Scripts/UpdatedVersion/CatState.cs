@@ -151,16 +151,36 @@ public class CatState : MonoBehaviour
         return result;
     }
 
+    private bool uiOn = true;
+
     public void ToggleUI()
     {
+
+        uiOn = !uiOn;
+
         Canvas[] canvas = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
 
         foreach (Canvas c in canvas)
         {
             if(c.gameObject.activeSelf)
-                c.enabled = !c.enabled;
+                c.enabled = uiOn;
+        }
+
+        int uiLayer = LayerMask.NameToLayer("UI");
+        int uiMask = 1 << uiLayer;
+
+
+        if (!uiOn)
+        {
+            Camera.main.cullingMask &= ~uiMask;
+        }
+        else
+        {
+            Camera.main.cullingMask |= uiMask;
         }
     }
+
+  
 
 
     public void CheckInput(string input)
@@ -179,7 +199,7 @@ public class CatState : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
         }
 
-        if (normalizedInput.Equals("level_one", StringComparison.OrdinalIgnoreCase))
+        if (normalizedInput.Equals("levelone", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter1");
             ResetGlossary();
@@ -187,7 +207,7 @@ public class CatState : MonoBehaviour
             Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 
-        if (normalizedInput.Equals("level_two", StringComparison.OrdinalIgnoreCase))
+        if (normalizedInput.Equals("leveltwo", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter2");
             ResetGlossary();
@@ -196,7 +216,7 @@ public class CatState : MonoBehaviour
             Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 
-        if (normalizedInput.Equals("level_three", StringComparison.OrdinalIgnoreCase))
+        if (normalizedInput.Equals("levelthree", StringComparison.OrdinalIgnoreCase))
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
             ResetGlossary();

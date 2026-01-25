@@ -925,7 +925,7 @@ MonoBehaviour:
     - rotate: 1
       activateDependentDecisions: 0
       speed: 0.002
-      animation: {fileID: 7400000, guid: 92b8c042b9a451f4a82637589673aef1, type: 2}
+      animation: {fileID: 7400000, guid: 5081f8e72e45bce41baa11f1fc972496, type: 2}
       point: {fileID: 1577814151}
       hasEvent: 1
       onReachPoint:
