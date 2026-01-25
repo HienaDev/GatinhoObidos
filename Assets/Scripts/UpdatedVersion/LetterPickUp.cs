@@ -50,7 +50,6 @@ public class LetterPickUp : MonoBehaviour
         {
             if (levelManager != null)
             {
-                levelManager.CollectLetter(index);
                 PlayTween(text.transform, targetTransform);
                 PlayTween(textBackground.transform, targetTransform);
                 collectEffect.gameObject.SetActive(true);
@@ -97,7 +96,10 @@ public class LetterPickUp : MonoBehaviour
                     {
                         Tween moveTween = objectToAnimate
                             .DOMove(targetTransform.position, shrinkDuration)
-                            .SetEase(Ease.InBack);
+                            .SetEase(Ease.InBack).OnComplete(() =>
+                            {
+                                levelManager.CollectLetter(index);
+                            });
                     }
 
                     // Combine tweens with OnComplete callback

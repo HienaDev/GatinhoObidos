@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform[] letterPositions;
     [SerializeField] private LetterPickUp letterPrefab;
     [SerializeField] private Transform letterCollectTarget; // Optional target for letters to move towards
+    [SerializeField] private Transform wordColletTarget;
     private Vector3 wordCollectTarget;
     private Animator noteBookAnimator;
 
@@ -31,6 +32,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string currentLevelName;
 
     [SerializeField] private TextMeshProUGUI wordMissingUI;
+    [SerializeField] private TextMeshProUGUI wordMissingUIBackground;
 
     [SerializeField] private Scaler[] scalers;
 
@@ -103,6 +105,7 @@ public class LevelManager : MonoBehaviour
         string missingWordStr = Settings.GetText(missingWord.ToString());
         missingWordLocalized = missingWordStr;
         wordMissingUI.text = missingWordStr;
+        wordMissingUIBackground.text = missingWordStr;
         List<int> availableIndices = Enumerable.Range(0, missingWordStr.Length).ToList();
 
         // Shuffle indices
@@ -151,6 +154,7 @@ public class LevelManager : MonoBehaviour
             lettersCollected++;
             wordMissingUI.text = ReplaceLetter(wordMissingUI.text, index, missingWordLocalized[index]);
             missingLetters.Remove(index);
+            PopUpAndDown(letterCollectTarget.GetComponent<RectTransform>());
         }
         else
         {
@@ -171,22 +175,71 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void PopUpAndDown(RectTransform target)
+    {
+        Sequence seq = DOTween.Sequence();
+        Vector3 originalScale = target.localScale;
+        // POP UP
+        seq.Append(
+            target.DOScale(originalScale * 1.2f, 0.2f)
+                  .SetEase(Ease.OutBack)
+        );
+        // small settle back to normal scale
+        seq.Append(
+            target.DOScale(originalScale, 0.1f)
+        );
+
+    }
+
     private void ScaleDownAndDeactivateWord(RectTransform target, float duration)
     {
+        Sequence seq = DOTween.Sequence();
 
+        Vector3 originalScale = target.localScale;
 
-        // Create tween
-        target.DOMove(wordCollectTarget, duration).SetEase(Ease.InBack);
+        // POP UP
+        seq.Append(
+            target.DOScale(originalScale * 1.2f, 0.2f)
+                  .SetEase(Ease.OutBack)
+        );
 
-        target.DOScale(Vector3.zero, duration)
-              .SetEase(Ease.InBack) // nice easing effect
-              .OnComplete(() =>
-              {
-                  target.gameObject.SetActive(false);
-                  particleExplosion = Instantiate(particleExplosion);
-                  particleExplosion.transform.position = target.transform.position;
-                  noteBookAnimator.SetBool("Writing", true);
-              });
+        // Change text color to gold (if TMP exists)
+        seq.AppendCallback(() =>
+        {
+
+            if (wordMissingUI != null)
+            {
+                wordMissingUI.color = new Color(1f, 0.5f, 0f, 1f); // gold
+                //wordMissingUIBackground.gameObject.SetActive(true);
+            }
+
+            // Instantiate particles at popup moment
+            var particles = Instantiate(particleExplosion);
+            particles.transform.position = target.position;
+        });
+
+        // small settle back to normal scale
+        seq.Append(
+            target.DOScale(originalScale, 0.1f)
+        );
+
+        // wait before disappearing
+        seq.AppendInterval(2f);
+
+        // SCALE DOWN
+        seq.Append(
+            target.DOScale(Vector3.zero, duration)
+                  .SetEase(Ease.InBack)
+        ).Join(
+            target.DOMove(wordColletTarget.position, duration).SetEase(Ease.InBack)
+        );
+
+        // FINALIZE
+        seq.OnComplete(() =>
+        {
+            target.gameObject.SetActive(false);
+            noteBookAnimator.SetBool("Writing", true);
+        });
     }
 
     /// <summary>
