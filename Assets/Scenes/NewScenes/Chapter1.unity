@@ -11094,11 +11094,11 @@ MonoBehaviour:
   - {fileID: 1030950463}
   - {fileID: 368018631}
   letterPrefab: {fileID: 8573704925517135626, guid: 0b033aaf161dee144ba79fd7a4f9424b, type: 3}
-  letterCollectTarget: {fileID: 0}
+  letterCollectTarget: {fileID: 382885168}
   particleExplosion: {fileID: 8617292371631482598, guid: 5e2e8f1e34d17de418710325318f2f41, type: 3}
   letterColor: {r: 1, g: 0.9803922, b: 0.83921576, a: 1}
   currentLevelName: Floresta
-  wordMissingUI: {fileID: 0}
+  wordMissingUI: {fileID: 888043231}
   scalers:
   - {fileID: 1006558678}
   letterScale: 1
