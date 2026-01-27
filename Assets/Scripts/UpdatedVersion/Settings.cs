@@ -39,6 +39,9 @@ public class Settings : MonoBehaviour
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject wordsMenu;
     [SerializeField] private GameObject popUpConfirmation;
+    [SerializeField] private Image wordsMenuImage;
+    [SerializeField] private Sprite wordsMenuOpenSprite;
+    [SerializeField] private Sprite wordsMenuClosedSprite;
     [SerializeField] private Animator wordsMenuAnimator;
 
     [Header("Localization Settings")]
@@ -165,7 +168,11 @@ public class Settings : MonoBehaviour
         // This is just to demonstrate that the localization works
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ToggleMenu();
+            TAG_CREDITS credits = FindAnyObjectByType<TAG_CREDITS>();
+            if (credits == null)
+                ToggleMenu();
+            else if(credits != null && !credits.gameObject.activeSelf)
+                ToggleMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -217,6 +224,18 @@ public class Settings : MonoBehaviour
     public void ToggleWordsMenu()
     {
         wordsMenu.SetActive(!wordsMenu.activeSelf);
+
+        if(wordsMenu.activeSelf)
+        {
+            wordsMenuAnimator.enabled = false;
+            wordsMenuImage.sprite = wordsMenuOpenSprite;
+        }
+        else
+        {
+            wordsMenuAnimator.enabled = true;
+            wordsMenuImage.sprite = wordsMenuClosedSprite;
+        }
+
         wordsMenuAnimator.SetBool("Writing", false);
     }
 
@@ -232,6 +251,22 @@ public class Settings : MonoBehaviour
             () => dof.focalLength.value,
             x => dof.focalLength.value = x,
             0f,
+            2f
+        );
+    }
+
+    [Button]
+    public void TurnBlurOn()
+    {
+        DepthOfField dof;
+        // Tween over Focal Length variable of the Depth of Field effect
+        blurEffect.profile.TryGet(out dof);
+
+        // Tween focal length from 10 to 60 over 2 seconds
+        DOTween.To(
+            () => dof.focalLength.value,
+            x => dof.focalLength.value = x,
+            300f,
             2f
         );
     }

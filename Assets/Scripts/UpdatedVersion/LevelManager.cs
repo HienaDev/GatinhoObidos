@@ -258,6 +258,16 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void BlurScreen()
+    {
+        Settings.instance.TurnBlurOn();
+    }
+
+    public void BlurScreenOff()
+    {
+        Settings.instance.TurnBlurOff();
+    }
+
     public void ScaleUIDown()
     {
         foreach(Scaler s in scalers)

@@ -18,15 +18,9 @@ public class VolumeSliderController : MonoBehaviour
 
     void Start()
     {
-        // Load saved volume or default to 0.75 if none exists
         float savedVolume = PlayerPrefs.GetFloat(PlayerPrefsKey, 1f);
-
-        // Set slider value without triggering the onValueChanged event
-        //volumeSlider.SetValueWithoutNotify(savedVolume);
-
         Debug.Log("Loaded volume: " + savedVolume);
 
-        // Apply to mixer
         SetVolume(savedVolume);
 
         // Update slider UI

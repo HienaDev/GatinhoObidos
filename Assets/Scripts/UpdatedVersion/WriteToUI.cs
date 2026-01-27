@@ -138,18 +138,18 @@ public class WriteToUI : MonoBehaviour
         if (UIHidden)
             return;
 
-        // Add Space
-        if ((Input.GetKeyDown(KeyCode.Space) && text.Length < 26 && text != ""))
-        {
+        //// Add Space
+        //if ((Input.GetKeyDown(KeyCode.Space) && text.Length < 26 && text != ""))
+        //{
 
-            if (text[text.Length - 1] != '_')
-            {
-                typeSounds.PlayTypeSound();
-                rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rect.rect.width + 17.3077f);
-                rectOutline.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectOutline.rect.width + 17.3077f);// += 17.3077f;
-                text += "_";
-            }
-        }
+        //    if (text[text.Length - 1] != '_')
+        //    {
+        //        typeSounds.PlayTypeSound();
+        //        rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rect.rect.width + 17.3077f);
+        //        rectOutline.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, rectOutline.rect.width + 17.3077f);// += 17.3077f;
+        //        text += "_";
+        //    }
+        //}
 
         // Delete Char
         if (Input.GetKeyDown(KeyCode.Backspace))
