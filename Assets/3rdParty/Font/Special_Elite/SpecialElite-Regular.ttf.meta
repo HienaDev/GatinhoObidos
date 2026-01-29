@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8ec6c79f0035b94398fa6ac36f7625e
+guid: 07748e2e4ab20f14ba8de4f566a71967
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - JMH Typewriter
+  - Special Elite
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

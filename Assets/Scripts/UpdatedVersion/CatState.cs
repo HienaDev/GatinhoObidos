@@ -54,6 +54,12 @@ public class CatState : MonoBehaviour
         }
     }
 
+    public void StartAtActionPoint(ActionPoint actionPoint)
+    {
+        currentActionPoint = actionPoint;
+        transform.position = actionPoint.transform.position;
+    }
+
     public void UnlockAllWords()
     {
         UnlockAction(ActionWord.right);
@@ -223,6 +229,18 @@ public class CatState : MonoBehaviour
             UnlockAction(ActionWord.sleep);
             UnlockAction(ActionWord.scratch);
             UnlockAction(ActionWord.jump);
+            Settings.UpdateUnlockedWordsDisplayGlobal();
+        }
+
+        if (normalizedInput.Equals("levelthreefinal", StringComparison.OrdinalIgnoreCase))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
+            Settings.instance.jumpToFinal = true;
+            ResetGlossary();
+            UnlockAction(ActionWord.sleep);
+            UnlockAction(ActionWord.scratch);
+            UnlockAction(ActionWord.jump);
+            UnlockAction(ActionWord.meow);
             Settings.UpdateUnlockedWordsDisplayGlobal();
         }
 

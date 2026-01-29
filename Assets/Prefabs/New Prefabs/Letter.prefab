@@ -70,7 +70,7 @@ MonoBehaviour:
   m_text: T
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
-  m_sharedMaterial: {fileID: 5546788968571632642, guid: d117e10ead2d61240b45737a23226143, type: 2}
+  m_sharedMaterial: {fileID: -2721166929717091654, guid: d117e10ead2d61240b45737a23226143, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_text: T
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
-  m_sharedMaterial: {fileID: 5546788968571632642, guid: d117e10ead2d61240b45737a23226143, type: 2}
+  m_sharedMaterial: {fileID: -2721166929717091654, guid: d117e10ead2d61240b45737a23226143, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1508499457296303647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +527,7 @@ MonoBehaviour:
   onScaleComplete:
     m_PersistentCalls:
       m_Calls: []
+  delay: 2
 --- !u!1001 &3309558943702944200
 PrefabInstance:
   m_ObjectHideFlags: 0

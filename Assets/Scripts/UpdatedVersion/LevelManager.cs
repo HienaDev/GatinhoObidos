@@ -42,6 +42,9 @@ public class LevelManager : MonoBehaviour
 
     private WriteToUI writeToUI;
 
+    [SerializeField] private ActionPoint finalActionPoint;
+    [SerializeField] private GameObject initialStory;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -53,6 +56,8 @@ public class LevelManager : MonoBehaviour
         noteBookAnimator = FindAnyObjectByType<TAG_WORDS>().GetComponent<Animator>();
 
         UnlockLevel(currentLevelName);
+
+
 
         if (letterPositions.Length < numberOfMissingLetters)
         {
@@ -75,6 +80,23 @@ public class LevelManager : MonoBehaviour
         UpdateLetters();
 
         LocalizationEvents.OnLanguageChanged += UpdateLetters;
+
+        if (Settings.instance.jumpToFinal && finalActionPoint != null)
+        {
+            CatState catState = FindObjectOfType<CatState>();
+            catState.StartAtActionPoint(finalActionPoint);
+
+            if (initialStory != null)
+            {
+                initialStory.SetActive(false);
+            }
+
+            Settings.instance.TurnBlurOff();
+
+            Settings.instance.jumpToFinal = false;
+
+            LevelReady();
+        }
     }
 
     [ContextMenu("Level Ready")]

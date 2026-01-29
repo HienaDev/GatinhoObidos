@@ -76,7 +76,7 @@ public class CreditsInspector : MonoBehaviour
 
         _gameObject.SetActive(false);
         if (_goBack)
-            SceneManager.LoadScene("Hub");
+            SceneManager.LoadScene("NewMainMenu");
     }
 
     public static IEnumerator Fade(CanvasGroup cg, bool inOrOut, float _minAlpha, float _maxAlpha, Action onComplete = null)

@@ -59,6 +59,8 @@ public class Settings : MonoBehaviour
     [SerializeField] private AudioMixer sfx;
 
     [SerializeField] private Volume blurEffect;
+
+    public bool jumpToFinal = false;
     public static string GetText(string key)
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
@@ -103,11 +105,7 @@ public class Settings : MonoBehaviour
         {
             
         }
-        else if (scene.name == "Hub")
-        {
-            ScaleWordbook();
-        }
-        else if (scene.name != "Hub")
+        else
         {
             ResetBlur();
         }
@@ -143,6 +141,10 @@ public class Settings : MonoBehaviour
         }
         else
             currentLanguage = startingLanguage;
+        int width = Screen.width;
+        int height = Screen.height;
+
+        Debug.Log($"Resolution: {width} x {height}");
 
 
         StartCoroutine(LoadCSV());
@@ -225,15 +227,16 @@ public class Settings : MonoBehaviour
     {
         wordsMenu.SetActive(!wordsMenu.activeSelf);
 
-        if(wordsMenu.activeSelf)
+        Material mat = wordsMenuImage.material; // creates an instance
+        
+
+        if (wordsMenu.activeSelf)
         {
-            wordsMenuAnimator.enabled = false;
-            wordsMenuImage.sprite = wordsMenuOpenSprite;
+            mat.SetFloat("_OutlineEnabled", 1f);
         }
         else
         {
-            wordsMenuAnimator.enabled = true;
-            wordsMenuImage.sprite = wordsMenuClosedSprite;
+            mat.SetFloat("_OutlineEnabled", 0f);
         }
 
         wordsMenuAnimator.SetBool("Writing", false);

@@ -5,18 +5,21 @@ public class SpriteFader : MonoBehaviour
 {
     [SerializeField] private float fadeDuration = 1f;
 
+    [SerializeField] private bool fadeOnStart = true;
+
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         // Get SpriteRenderer on this object
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color(1f, 1f, 1f, 1f); // Ensure starting alpha is 1
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f); // Ensure starting alpha is 1
     }
 
     private void Start()
     {
-        FadeOut();
+        if (fadeOnStart)
+            FadeOut();
     }
 
     public void FadeOut()

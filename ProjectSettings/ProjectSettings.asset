@@ -169,7 +169,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.EpicWe.PussInBooks
+    Standalone: com.EPIC-WE.PussInBooks
   buildNumber:
     Standalone: 0
     VisionOS: 0

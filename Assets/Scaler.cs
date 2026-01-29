@@ -18,6 +18,8 @@ public class Scaler : MonoBehaviour
 
     [SerializeField] private UnityEvent onScaleComplete;
 
+    [SerializeField] private float delay = 2f;
+
 
     private void Awake()
     {
@@ -65,7 +67,7 @@ public class Scaler : MonoBehaviour
         transform.localScale = Vector3.zero;
 
         // Animate to original scale
-        transform.DOScale(_originalScale, duration).SetEase(easeType).SetDelay(2f);
+        transform.DOScale(_originalScale, duration).SetEase(easeType).SetDelay(delay);
     }
 
     public void ScaleDown()

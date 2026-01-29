@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 347e850f3b6a1884eb2d4e1200282718
+guid: b38b69387998e0d4da2b01de4a328602
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 16
+  fontSize: 32
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - JMH Typewriter
+  - RM Typerighter old
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
