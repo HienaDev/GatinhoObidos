@@ -65,6 +65,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private AudioSource notebookOpenAudioSource;
     [SerializeField] private AudioClip[] notebookSound;
 
+
     public static string GetText(string key)
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);

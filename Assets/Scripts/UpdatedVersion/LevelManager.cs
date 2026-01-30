@@ -45,6 +45,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private ActionPoint finalActionPoint;
     [SerializeField] private GameObject initialStory;
 
+
+    [SerializeField] private AudioSource notebookWriting;
+    [SerializeField] private AudioSource wordSliding;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -253,13 +257,18 @@ public class LevelManager : MonoBehaviour
             target.DOScale(Vector3.zero, duration)
                   .SetEase(Ease.InBack)
         ).Join(
-            target.DOMove(wordColletTarget.position, duration).SetEase(Ease.InBack)
+            target.DOMove(wordColletTarget.position, duration).SetEase(Ease.InBack).OnStart(() =>
+            {
+                wordSliding.Play();
+
+            })
         );
 
         // FINALIZE
         seq.OnComplete(() =>
         {
             target.gameObject.SetActive(false);
+            notebookWriting.Play();
             noteBookAnimator.SetBool("Writing", true);
         });
     }

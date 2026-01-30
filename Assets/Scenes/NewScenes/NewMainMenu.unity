@@ -2865,11 +2865,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &494941554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3205,11 +3201,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &532657494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4359,11 +4351,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &720524570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6879,11 +6867,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!1 &950207028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8020,11 +8004,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &1129866560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8649,11 +8629,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!95 &1211062705
 Animator:
   serializedVersion: 5
@@ -9378,11 +9354,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &1248704102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9939,11 +9911,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
   - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
-  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
-  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
-  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
-  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
-  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
+  - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!1 &1319696272
 GameObject:
   m_ObjectHideFlags: 0
@@ -13638,6 +13606,22 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
+    - target: {fileID: 628869830980343501, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628869830980343501, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
+    - target: {fileID: 708398080021084100, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 708398080021084100, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 1117153726319632858, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -13662,6 +13646,14 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
+    - target: {fileID: 2355386766538832563, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355386766538832563, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 2407255303640527122, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -13686,6 +13678,22 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5395270703572637987, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395270703572637987, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
+    - target: {fileID: 5416360691322996069, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5416360691322996069, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 5562324155085323117, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -13718,14 +13726,38 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
+    - target: {fileID: 7649700923345626375, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649700923345626375, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 8177291103460897304, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
+    - target: {fileID: 8268421202366154118, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268421202366154118, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 8351780915505786502, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
+    - target: {fileID: 8377032664284221487, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377032664284221487, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 8464308436125122332, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: m_fontAsset
       value: 

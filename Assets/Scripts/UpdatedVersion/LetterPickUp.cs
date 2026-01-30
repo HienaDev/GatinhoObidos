@@ -26,6 +26,7 @@ public class LetterPickUp : MonoBehaviour
     [SerializeField] private AudioSource collectSound;
     [SerializeField] private AudioClip[] audioClips;
 
+    [SerializeField] private AudioSource letterSlideSource;
     public void Instantiate(ActionWord actionWord, int index, LevelManager levelManager, Transform targetTransform)
     {
         this.actionWord = actionWord;
@@ -90,6 +91,7 @@ public class LetterPickUp : MonoBehaviour
                 // Step 2: Pause
                 DOVirtual.DelayedCall(pauseDuration, () =>
                 {
+                    letterSlideSource.Play();
                     // Step 3: Rotate again while shrinking to 0 and moving to target (if any)
                     Tween scaleTween = objectToAnimate
                         .DOScale(Vector3.zero, shrinkDuration)
