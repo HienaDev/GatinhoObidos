@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 62325836}
   - component: {fileID: 62325837}
   m_Layer: 0
-  m_Name: Start R/L - Action Point (4)
+  m_Name: Start R/L/S - Action Point (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7156,7 +7156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 1e8d9a91efeef5549a4e45dfd48e068b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5d269a480449f140b3fc8ff345e7fad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7176,8 +7176,8 @@ Transform:
   m_GameObject: {fileID: 905390562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -276.5938, y: -79.22953, z: 6.7431946}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: -276.64, y: -79.56, z: 6.7431946}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1564947180}
