@@ -2859,8 +2859,17 @@ MonoBehaviour:
   animationTime: 0.2
   easeType: 27
   audioMixer: {fileID: 0}
-  hoverSound: []
-  clickSound: []
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &494941554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5332,6 +5341,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1211062704}
+          m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
+          m_MethodName: ClickEffect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &788738607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5880,6 +5905,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1301262864}
+          m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
+          m_MethodName: ClickEffect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &804978666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,6 +6105,22 @@ MonoBehaviour:
         - m_Target: {fileID: 904769959}
           m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
           m_MethodName: ScaleDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 904769959}
+          m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
+          m_MethodName: ClickEffect
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11371,7 +11428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

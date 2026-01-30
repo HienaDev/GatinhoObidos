@@ -2,6 +2,8 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 
 public class ButtonUI : MonoBehaviour
 {
@@ -30,6 +32,10 @@ public class ButtonUI : MonoBehaviour
 
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.outputAudioMixerGroup = audioMixer;
+
+        audioSource.playOnAwake = false;
+
+        RegisterClickEvent();
     }
 
     // Scale up (hover effect)
@@ -41,6 +47,7 @@ public class ButtonUI : MonoBehaviour
 
         if (hoverSound.Length == 0) return;
         AudioClip clip = hoverSound[Random.Range(0, hoverSound.Length)];
+        audioSource.volume = 0.6f;
         audioSource.clip = clip;
         audioSource.Play();
 
@@ -54,10 +61,10 @@ public class ButtonUI : MonoBehaviour
 
         transform.DOScale(originalScale * scaleDownSize, animationTime).SetEase(Ease.InQuad);
 
-        if (hoverSound.Length == 0) return;
-        AudioClip clip = hoverSound[Random.Range(0, hoverSound.Length)];
-        audioSource.clip = clip;
-        audioSource.Play();
+        //if (hoverSound.Length == 0) return;
+        //AudioClip clip = hoverSound[Random.Range(0, hoverSound.Length)];
+        //audioSource.clip = clip;
+        //audioSource.Play();
     }
 
     // Move slightly to the right
@@ -83,9 +90,35 @@ public class ButtonUI : MonoBehaviour
 
         if (clickSound.Length == 0) return;
         AudioClip clip = clickSound[Random.Range(0, clickSound.Length)];
-        audioSource.clip = clip;
-        audioSource.Play();
+
+        if (!audioSource.enabled || !audioSource.gameObject.activeInHierarchy)
+        {
+            Debug.LogWarning("AudioSource disabled — handling fallback.");
+
+            HandleDisabledAudioSource(clip);
+
+            return;
+        }
+        else
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+            
     }
+
+    public void HandleDisabledAudioSource(AudioClip clip)
+    {         // Fallback: Create a temporary AudioSource to play the clip
+        GameObject tempAudioSourceObj = new GameObject("TempAudioSource");
+        AudioSource tempAudioSource = tempAudioSourceObj.AddComponent<AudioSource>();
+        tempAudioSource.outputAudioMixerGroup = audioMixer;
+        tempAudioSource.clip = clip;
+        tempAudioSource.Play();
+        tempAudioSource.playOnAwake = false;
+        // Destroy the temporary AudioSource after the clip finishes playing
+        Destroy(tempAudioSourceObj, clip.length);
+    }
+
 
     // **Exit animation (moves far left)**
     public void ExitLeft()
@@ -113,4 +146,27 @@ public class ButtonUI : MonoBehaviour
             Application.Quit(); // Quit game in build
 #endif
     }
+
+    void RegisterClickEvent()
+    {
+        EventTrigger trigger = GetComponent<EventTrigger>();
+        if (trigger == null) return;
+
+        // Check if already registered (avoid duplicates)
+        foreach (var entry in trigger.triggers)
+        {
+            if (entry.eventID == EventTriggerType.PointerClick)
+            {
+                // Already has a pointer click — don't double add
+                return;
+            }
+        }
+
+        EventTrigger.Entry clickEntry = new EventTrigger.Entry();
+        clickEntry.eventID = EventTriggerType.PointerClick;
+        clickEntry.callback.AddListener((eventData) => ClickEffect());
+
+        trigger.triggers.Add(clickEntry);
+    }
+
 }

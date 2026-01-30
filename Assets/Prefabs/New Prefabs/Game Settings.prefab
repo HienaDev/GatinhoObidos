@@ -4122,6 +4122,11 @@ MonoBehaviour:
   onScaleComplete:
     m_PersistentCalls:
       m_Calls: []
+  onScaleStart:
+    m_PersistentCalls:
+      m_Calls: []
+  mixer: {fileID: 0}
+  clip: []
   delay: 2
 --- !u!1 &4582422109421341075
 GameObject:
