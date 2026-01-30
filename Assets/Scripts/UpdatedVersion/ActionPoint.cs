@@ -42,6 +42,7 @@ public class PathPoint
 [Serializable]
 public class Decision
 {
+    public UnityEvent onActivate;
     public bool active = true;
     public ActionPoint nextActionPoint;
     public ActionWord action;

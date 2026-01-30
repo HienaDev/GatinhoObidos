@@ -2858,8 +2858,9 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 0}
+  hoverSound: []
+  clickSound: []
 --- !u!114 &494941554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,7 +3045,7 @@ RectTransform:
   m_GameObject: {fileID: 532657487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1116696590}
@@ -3052,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 470, y: 250}
+  m_AnchoredPosition: {x: 455.4, y: 261}
   m_SizeDelta: {x: 150, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532657489
@@ -3188,8 +3189,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &532657494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4332,8 +4343,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &720524570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6794,8 +6815,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!1 &950207028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,8 +7956,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &1129866560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8544,8 +8585,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!95 &1211062705
 Animator:
   serializedVersion: 5
@@ -9263,8 +9314,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &1248704102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9814,8 +9875,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!1 &1319696272
 GameObject:
   m_ObjectHideFlags: 0
@@ -14572,9 +14643,9 @@ RectTransform:
   - {fileID: 961763560}
   - {fileID: 60407237}
   - {fileID: 751148968}
-  - {fileID: 8694763936961613026}
   - {fileID: 1808256575}
   - {fileID: 525494760}
+  - {fileID: 8694763936961613026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

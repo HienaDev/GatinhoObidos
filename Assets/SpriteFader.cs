@@ -1,5 +1,6 @@
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.Audio;
 
 public class SpriteFader : MonoBehaviour
 {
@@ -9,11 +10,20 @@ public class SpriteFader : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private AudioMixerGroup audioMixer;
+    [SerializeField] private AudioClip fadeIn;
+    [SerializeField] private AudioClip fadeOut;
+
+    private AudioSource audioSource;
+
     private void Awake()
     {
         // Get SpriteRenderer on this object
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f); // Ensure starting alpha is 1
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = audioMixer;
     }
 
     private void Start()
@@ -24,6 +34,11 @@ public class SpriteFader : MonoBehaviour
 
     public void FadeOut()
     {
+        if (fadeOut != null)
+            {
+            audioSource.clip = fadeOut;
+            audioSource.Play();
+        }
         if (spriteRenderer != null)
         {
             // Fade alpha to 0
@@ -37,6 +52,11 @@ public class SpriteFader : MonoBehaviour
 
     public void FadeIn()
     {
+        if (fadeIn != null)
+        {
+            audioSource.clip = fadeIn;
+            audioSource.Play();
+        }
         if (spriteRenderer != null)
         {
             // Fade alpha to 1

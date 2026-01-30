@@ -26,6 +26,9 @@ public class CatState : MonoBehaviour
     [SerializeField] private GameObject confused;
     [SerializeField] private GameObject blocked;
 
+    [SerializeField] private AudioSource blockedSource;
+    [SerializeField] private AudioClip[] blockedClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -312,6 +315,10 @@ public class CatState : MonoBehaviour
     private IEnumerator TurnOnObjectTimer(GameObject targetObject, float duration)
     {
         targetObject.SetActive(true);
+        
+        blockedSource.clip = blockedClip[UnityEngine.Random.Range(0, blockedClip.Length)];
+        blockedSource.Play();
+
         yield return new WaitForSeconds(duration);
         targetObject.SetActive(false);
     }
@@ -332,6 +339,8 @@ public class CatState : MonoBehaviour
     {
         bool deactivatedActions = false;
         moving = true;
+
+        action.onActivate.Invoke();    
 
         for (int i = 0; i < action.path.Length; i++)
         {

@@ -61,6 +61,10 @@ public class Settings : MonoBehaviour
     [SerializeField] private Volume blurEffect;
 
     public bool jumpToFinal = false;
+
+    [SerializeField] private AudioSource notebookOpenAudioSource;
+    [SerializeField] private AudioClip[] notebookSound;
+
     public static string GetText(string key)
     {
         Debug.Log("Getting text for key: " + key + " in language: " + instance.currentLanguage);
@@ -238,6 +242,9 @@ public class Settings : MonoBehaviour
         {
             mat.SetFloat("_OutlineEnabled", 0f);
         }
+
+        notebookOpenAudioSource.clip = (notebookSound[UnityEngine.Random.Range(0, notebookSound.Length)]);
+        notebookOpenAudioSource.Play();
 
         wordsMenuAnimator.SetBool("Writing", false);
     }

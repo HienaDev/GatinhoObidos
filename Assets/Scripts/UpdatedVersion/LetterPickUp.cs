@@ -23,7 +23,8 @@ public class LetterPickUp : MonoBehaviour
 
     [SerializeField] private ParticleSystem collectEffect;
 
-
+    [SerializeField] private AudioSource collectSound;
+    [SerializeField] private AudioClip[] audioClips;
 
     public void Instantiate(ActionWord actionWord, int index, LevelManager levelManager, Transform targetTransform)
     {
@@ -55,6 +56,12 @@ public class LetterPickUp : MonoBehaviour
                 collectEffect.gameObject.SetActive(true);
                 collectEffect.Play();
                 Collider2D collider2D = GetComponent<Collider2D>();
+
+                if (collectSound != null && audioClips.Length > 0)
+                {
+                    collectSound.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+                }
+
                 if (collider2D != null)
                     collider2D.enabled = false; // Disable further collisions
             }

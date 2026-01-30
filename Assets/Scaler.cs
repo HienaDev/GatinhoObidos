@@ -2,7 +2,8 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;  
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Scaler : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class Scaler : MonoBehaviour
     [SerializeField] private KeyCode keyToDeactivate = KeyCode.Tab;
 
     [SerializeField] private UnityEvent onScaleComplete;
+    [SerializeField] private UnityEvent onScaleStart;
+
+    [SerializeField] private AudioMixerGroup mixer;
+    [SerializeField] private AudioClip[] clip;
+    private AudioSource audioSource;
 
     [SerializeField] private float delay = 2f;
 
@@ -32,6 +38,10 @@ public class Scaler : MonoBehaviour
         // Store the original scale
         SceneManager.sceneLoaded += OnSceneLoaded;
         transform.localScale = Vector3.zero;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = mixer;
+
         if (playOnStart)
         {
             
@@ -63,11 +73,22 @@ public class Scaler : MonoBehaviour
     /// </summary>
     public void Play()
     {
+        
         // Ensure scale is zero before animating
         transform.localScale = Vector3.zero;
 
         // Animate to original scale
-        transform.DOScale(_originalScale, duration).SetEase(easeType).SetDelay(delay);
+        transform.DOScale(_originalScale, duration).SetEase(easeType).SetDelay(delay).OnStart(() => PlayRandomSound());
+    }
+
+    public void PlayRandomSound()
+    {
+        if (clip.Length == 0) return;
+
+        AudioClip selectedClip = clip[Random.Range(0, clip.Length)];
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.clip = selectedClip;
+        audioSource.Play();
     }
 
     public void ScaleDown()

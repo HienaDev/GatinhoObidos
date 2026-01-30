@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class Rotator : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class Rotator : MonoBehaviour
 
     public bool autoRotate = false;
 
+    [SerializeField] private UnityEvent onRotate;
+
     /// <summary>
     /// Rotates the object from its current rotation by rotationOffset at the given speed.
     /// </summary>
     public void Rotate()
     {
+        onRotate?.Invoke();
         Vector3 targetRotation = transform.eulerAngles + rotationOffset;
         float duration = rotationOffset.magnitude / rotationSpeed;
 

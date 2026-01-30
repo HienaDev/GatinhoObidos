@@ -560,8 +560,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &9006783715903673909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +630,7 @@ GameObject:
   - component: {fileID: 1196299129003021586}
   - component: {fileID: 7821526162134781730}
   - component: {fileID: 2537028824315797615}
+  - component: {fileID: 4790086138573494502}
   m_Layer: 0
   m_Name: Game Settings
   m_TagString: Untagged
@@ -676,6 +687,11 @@ MonoBehaviour:
   music: {fileID: 24100000, guid: a46fc54f5dbc53c47b0aa7b66e82b71c, type: 2}
   sfx: {fileID: 24100000, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   blurEffect: {fileID: 6206309039064323828}
+  jumpToFinal: 0
+  notebookOpenAudioSource: {fileID: 4790086138573494502}
+  notebookSound:
+  - {fileID: 8300000, guid: a0a106df83141d84fb53f1fa2f3aecb3, type: 3}
+  - {fileID: 8300000, guid: 47ba988640c26694dbb49350002a53dc, type: 3}
 --- !u!114 &1196299129003021586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +733,102 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c90a4c6d93cdeb44889e3599d97f715, type: 3}
   - {fileID: 8300000, guid: b29c03e4d1b35fb49884eaccfaff0e5d, type: 3}
 --- !u!82 &2537028824315797615
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212697918416634739}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &4790086138573494502
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2021,8 +2133,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!1 &2471296611543753729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,8 +5029,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &3927481152409498593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5688,8 +5820,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!1 &6397269331373913667
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,8 +6974,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &3322606505787869947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7976,8 +8128,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &5798181299199919946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8750,8 +8912,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &8092624695119121986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9047,8 +9219,18 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  woosh: {fileID: 0}
-  pop: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
+  hoverSound:
+  - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
+  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
+  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
+  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
+  clickSound:
+  - {fileID: 8300000, guid: 2ebe375ef92931e49966caf91025552a, type: 3}
+  - {fileID: 8300000, guid: c4d1cc988dfc4fe48aab963aacbf4429, type: 3}
+  - {fileID: 8300000, guid: 629a460a0fafc334f9f4018aa87d790e, type: 3}
+  - {fileID: 8300000, guid: 1a27f2c13ec41e94c8a4f8c4ec171dac, type: 3}
+  - {fileID: 8300000, guid: 00b5b633a1fe6644eb7292df23c3b3b8, type: 3}
 --- !u!114 &7043469939971749190
 MonoBehaviour:
   m_ObjectHideFlags: 0

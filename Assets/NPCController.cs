@@ -10,6 +10,11 @@ public class NPCController : MonoBehaviour
     [SerializeField] private GameObject characterStartled;
     [SerializeField] private GameObject characterAlert;
 
+    [SerializeField] private AudioClip[] startledSoundsFemale;
+    [SerializeField] private AudioClip[] startledSoundsMale;
+    [SerializeField] private AudioSource audioSourceFemale;
+    [SerializeField] private AudioSource audioSourceMale;
+
     public void DisableAllCharacters()
     {
         characterDefault.SetActive(false);
@@ -34,6 +39,9 @@ public class NPCController : MonoBehaviour
 
         DisableAllCharacters();
         characterAnnoyed.SetActive(true);
+
+        audioSourceFemale.PlayOneShot(startledSoundsFemale[Random.Range(0, startledSoundsFemale.Length)]);
+
     }
 
     public void SetCharacterStartled()
@@ -43,6 +51,9 @@ public class NPCController : MonoBehaviour
 
         DisableAllCharacters();
         characterStartled.SetActive(true);
+
+        audioSourceFemale.PlayOneShot(startledSoundsFemale[Random.Range(0, startledSoundsFemale.Length)]);
+        audioSourceMale.PlayOneShot(startledSoundsMale[Random.Range(0, startledSoundsMale.Length)]);
     }
 
     public void SetCharacterAlert()

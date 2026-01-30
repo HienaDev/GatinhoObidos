@@ -1,5 +1,6 @@
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
@@ -16,34 +17,47 @@ public class ButtonUI : MonoBehaviour
 
     private bool exiting = false;
 
-    [SerializeField] private AudioClip woosh;
-    [SerializeField] private AudioClip pop;
+    [SerializeField] private AudioMixerGroup audioMixer;
+    [SerializeField] private AudioClip[] hoverSound;
+    [SerializeField] private AudioClip[] clickSound;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         originalPosition = transform.position; // Save initial position
         originalScale = transform.localScale.x;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = audioMixer;
     }
 
     // Scale up (hover effect)
     public void ScaleUp()
     {
         if (exiting) return;
-        if (pop != null)
-        {
-            //AudioManager.Instance.PlaySound(pop, pitch: Random.Range(0.9f, 1.1f));
-        }
+
         transform.DOScale(originalScale * scaleUpSize, animationTime).SetEase(Ease.OutQuad);
+
+        if (hoverSound.Length == 0) return;
+        AudioClip clip = hoverSound[Random.Range(0, hoverSound.Length)];
+        audioSource.clip = clip;
+        audioSource.Play();
+
+        
     }
 
     // Scale down (return to normal size)
     public void ScaleDown()
     {
         if (exiting) return;
-        if (pop != null)
-        {
-            //AudioManager.Instance.PlaySound(pop, pitch: Random.Range(0.9f, 1.1f));
-        }
+
         transform.DOScale(originalScale * scaleDownSize, animationTime).SetEase(Ease.InQuad);
+
+        if (hoverSound.Length == 0) return;
+        AudioClip clip = hoverSound[Random.Range(0, hoverSound.Length)];
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     // Move slightly to the right
@@ -66,15 +80,17 @@ public class ButtonUI : MonoBehaviour
         Sequence clickSequence = DOTween.Sequence();
         clickSequence.Append(transform.DOScale(originalScale * 0.9f, 0.1f).SetEase(Ease.InQuad));
         clickSequence.Append(transform.DOScale(originalScale * scaleDownSize, 0.15f).SetEase(Ease.OutBack));
+
+        if (clickSound.Length == 0) return;
+        AudioClip clip = clickSound[Random.Range(0, clickSound.Length)];
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     // **Exit animation (moves far left)**
     public void ExitLeft()
     {
-        if (woosh != null)
-        {
-            //AudioManager.Instance.PlaySound(woosh, pitch: Random.Range(0.9f, 1.1f));
-        }
+
         exiting = true;
         transform.DOMoveX(originalPosition.x - exitDistance, 0.5f)
             .SetEase(Ease.InBack)
