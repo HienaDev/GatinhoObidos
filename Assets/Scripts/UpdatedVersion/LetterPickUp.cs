@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class LetterPickUp : MonoBehaviour
 {
@@ -110,7 +111,19 @@ public class LetterPickUp : MonoBehaviour
                             .SetEase(Ease.InBack).OnComplete(() =>
                             {
                                 levelManager.CollectLetter(index);
-                                letterConnectWord.Play();
+
+                                if (!letterConnectWord.enabled || !letterConnectWord.gameObject.activeInHierarchy)
+                                {
+                                    Debug.LogWarning("AudioSource disabled — handling fallback.");
+
+                                    HandleDisabledAudioSource(letterConnectWord.clip, letterConnectWord.outputAudioMixerGroup);
+
+                                    return;
+                                }
+                                else
+                                {
+                                    letterConnectWord.Play();
+                                }
                             });
                     }
 
@@ -127,6 +140,18 @@ public class LetterPickUp : MonoBehaviour
                         });
                 });
             });
+    }
+
+    public void HandleDisabledAudioSource(AudioClip clip, AudioMixerGroup audioMixer)
+    {         // Fallback: Create a temporary AudioSource to play the clip
+        GameObject tempAudioSourceObj = new GameObject("TempAudioSource");
+        AudioSource tempAudioSource = tempAudioSourceObj.AddComponent<AudioSource>();
+        tempAudioSource.outputAudioMixerGroup = audioMixer;
+        tempAudioSource.clip = clip;
+        tempAudioSource.Play();
+        tempAudioSource.playOnAwake = false;
+        // Destroy the temporary AudioSource after the clip finishes playing
+        Destroy(tempAudioSourceObj, clip.length);
     }
 
 }
