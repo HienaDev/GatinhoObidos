@@ -2861,9 +2861,6 @@ MonoBehaviour:
   audioMixer: {fileID: 0}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &494941554
@@ -3197,9 +3194,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &532657494
@@ -4347,9 +4341,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &720524570
@@ -6863,9 +6854,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!1 &950207028
@@ -8000,9 +7988,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &1129866560
@@ -8625,9 +8610,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!95 &1211062705
@@ -9350,9 +9332,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!114 &1248704102
@@ -9907,9 +9886,6 @@ MonoBehaviour:
   audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound:
   - {fileID: 8300000, guid: e176ffaa36d93a24f83df38d2999b331, type: 3}
-  - {fileID: 8300000, guid: 7e69d545db8fc66478d6e26bb6006998, type: 3}
-  - {fileID: 8300000, guid: c4ea3d37922f0594cb9aa88d37ba546e, type: 3}
-  - {fileID: 8300000, guid: 674a80b983a64b0478a929f799a8844a, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
 --- !u!1 &1319696272
@@ -13611,11 +13587,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 628869830980343501, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628869830980343501, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 708398080021084100, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 708398080021084100, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 708398080021084100, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
@@ -13651,6 +13635,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2355386766538832563, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355386766538832563, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
@@ -13683,11 +13671,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5395270703572637987, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395270703572637987, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
     - target: {fileID: 5416360691322996069, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5416360691322996069, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5416360691322996069, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
@@ -13731,6 +13727,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7649700923345626375, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649700923345626375, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
@@ -13743,6 +13743,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8268421202366154118, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268421202366154118, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 733b8aba18e769d469255d6a0cf6d495, type: 3}
@@ -13752,6 +13756,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: d117e10ead2d61240b45737a23226143, type: 2}
     - target: {fileID: 8377032664284221487, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
       propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377032664284221487, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}
+      propertyPath: hoverSound.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377032664284221487, guid: d08f6dbc405af33499a1c9d84ea8dc8f, type: 3}

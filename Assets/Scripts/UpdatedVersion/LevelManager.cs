@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private AudioSource notebookWriting;
     [SerializeField] private AudioSource wordSliding;
+    [SerializeField] private AudioSource wordFinish;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -192,6 +193,8 @@ public class LevelManager : MonoBehaviour
             Debug.Log($"All letters collected! You can now perform the action: {missingWord}");
             
             CatState catState = FindObjectOfType<CatState>();
+
+            wordFinish.Play();
 
             ScaleDownAndDeactivateWord(letterCollectTarget.GetComponent<RectTransform>(), 2f);
 

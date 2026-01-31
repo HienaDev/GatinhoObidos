@@ -27,6 +27,8 @@ public class LetterPickUp : MonoBehaviour
     [SerializeField] private AudioClip[] audioClips;
 
     [SerializeField] private AudioSource letterSlideSource;
+
+    [SerializeField] private AudioSource letterConnectWord;
     public void Instantiate(ActionWord actionWord, int index, LevelManager levelManager, Transform targetTransform)
     {
         this.actionWord = actionWord;
@@ -108,6 +110,7 @@ public class LetterPickUp : MonoBehaviour
                             .SetEase(Ease.InBack).OnComplete(() =>
                             {
                                 levelManager.CollectLetter(index);
+                                letterConnectWord.Play();
                             });
                     }
 
