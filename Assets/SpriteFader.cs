@@ -23,7 +23,7 @@ public class SpriteFader : MonoBehaviour
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f); // Ensure starting alpha is 1
 
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.55f;
+        audioSource.volume = 0.2f;
         audioSource.outputAudioMixerGroup = audioMixer;
     }
 
