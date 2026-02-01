@@ -10,15 +10,7 @@ public class MenuManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("hello");
-            SceneManager.LoadScene(1);
-        }
-    }
+
 
     public void StartGame()
     {
@@ -31,6 +23,12 @@ public class MenuManager : MonoBehaviour
     }
 
     public void Exit()
+    {
+        Invoke(nameof(ExitGame), 0.1f);
+
+    }
+
+    private void ExitGame()
     {
         Application.Quit();
     }
