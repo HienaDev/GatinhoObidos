@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 8184940786553096810}
   - component: {fileID: 7501750961676595673}
   - component: {fileID: 3998848351158752828}
+  - component: {fileID: 3419038125537240883}
   m_Layer: 5
   m_Name: Title (TMP)
   m_TagString: Untagged
@@ -511,6 +512,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &3419038125537240883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815747631559918396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_municipio
 --- !u!1 &856487545929283313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1235,8 @@ RectTransform:
   - {fileID: 3960477380451031981}
   - {fileID: 7760613589765775861}
   - {fileID: 8631135099191114709}
+  - {fileID: 4234405642875793001}
+  - {fileID: 4269293558291653865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1270,6 +1286,7 @@ GameObject:
   - component: {fileID: 1433746996335483106}
   - component: {fileID: 1230262460155637941}
   - component: {fileID: 5206927345617150519}
+  - component: {fileID: 4101307217758889852}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1443,6 +1460,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4101307217758889852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090675676445136408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_inspired_roles
 --- !u!1 &2322532537911107490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1658,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1 &2476531203425757573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4269293558291653865}
+  - component: {fileID: 5627530760781154798}
+  - component: {fileID: 8185016913836557939}
+  m_Layer: 5
+  m_Name: Black (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4269293558291653865
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476531203425757573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5128911639871623009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.2574615, y: -2061}
+  m_SizeDelta: {x: 4000, y: 4000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5627530760781154798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476531203425757573}
+  m_CullTransparentMesh: 1
+--- !u!114 &8185016913836557939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476531203425757573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2705064486908252475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1839,7 @@ GameObject:
   - component: {fileID: 1523893058804456841}
   - component: {fileID: 2005868839253834955}
   - component: {fileID: 6270661501944973141}
+  - component: {fileID: 1570125383647402610}
   m_Layer: 5
   m_Name: Law (TMP)
   m_TagString: Untagged
@@ -1878,6 +1984,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 0
+--- !u!114 &1570125383647402610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2958419506274109275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_law
 --- !u!1 &3166970393570395320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2104,7 @@ GameObject:
   - component: {fileID: 948864215136443314}
   - component: {fileID: 8550131513960339360}
   - component: {fileID: 7913737779135687831}
+  - component: {fileID: 1672574080349382885}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2146,6 +2266,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1672574080349382885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330145422236976778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_cityhall
 --- !u!1 &3482787741712501884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,6 +2291,7 @@ GameObject:
   - component: {fileID: 2814721647518770909}
   - component: {fileID: 6753999665557101830}
   - component: {fileID: 452590016205074851}
+  - component: {fileID: 4983800975502497131}
   m_Layer: 5
   m_Name: Title (TMP)
   m_TagString: Untagged
@@ -2295,6 +2429,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4983800975502497131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482787741712501884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_inspired
 --- !u!1 &3750402368338587033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,6 +2533,7 @@ GameObject:
   - component: {fileID: 5378377114464934061}
   - component: {fileID: 9146606723280436379}
   - component: {fileID: 8469122389022204765}
+  - component: {fileID: 538504963772398269}
   m_Layer: 5
   m_Name: Usage (TMP)
   m_TagString: Untagged
@@ -2525,6 +2673,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &538504963772398269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3866965308737126243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_usage
 --- !u!1 &3958591180370324252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,6 +2831,7 @@ GameObject:
   - component: {fileID: 1184248973731435109}
   - component: {fileID: 4366500056266166363}
   - component: {fileID: 8616461150411723886}
+  - component: {fileID: 6713869910585027542}
   m_Layer: 5
   m_Name: MadeWith (TMP)
   m_TagString: Untagged
@@ -2807,6 +2969,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &6713869910585027542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108370503318595039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_madewith
+--- !u!1 &4323112227243814393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4234405642875793001}
+  - component: {fileID: 2236934435621403193}
+  - component: {fileID: 5936559865918730173}
+  m_Layer: 5
+  m_Name: Black
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4234405642875793001
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323112227243814393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5128911639871623009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -7.2574615, y: 3510}
+  m_SizeDelta: {x: 4000, y: 4000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2236934435621403193
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323112227243814393}
+  m_CullTransparentMesh: 1
+--- !u!114 &5936559865918730173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323112227243814393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4877842327260965217
 GameObject:
   m_ObjectHideFlags: 0
@@ -4244,6 +4494,7 @@ GameObject:
   - component: {fileID: 460631768186055917}
   - component: {fileID: 2965656063516597273}
   - component: {fileID: 4238745436496626999}
+  - component: {fileID: 5103151780241408709}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4403,6 +4654,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &5103151780241408709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298207891608034913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_josefaobidos
 --- !u!1 &6350126479263763551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,6 +4679,7 @@ GameObject:
   - component: {fileID: 7819777920993928237}
   - component: {fileID: 719373458065211913}
   - component: {fileID: 244432274711790038}
+  - component: {fileID: 6524145044707524928}
   m_Layer: 5
   m_Name: Title (TMP)
   m_TagString: Untagged
@@ -4552,6 +4817,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &6524145044707524928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6350126479263763551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_title
 --- !u!1 &7151148757163024900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,6 +4843,7 @@ GameObject:
   - component: {fileID: 1354274199861685624}
   - component: {fileID: 8013028938016430711}
   - component: {fileID: 661995745159093615}
+  - component: {fileID: 575827182437076329}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4731,6 +5010,19 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &575827182437076329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151148757163024900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_roles
 --- !u!1 &7331041967881997140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4837,6 +5129,7 @@ GameObject:
   - component: {fileID: 3941728804127536277}
   - component: {fileID: 6989771574685369800}
   - component: {fileID: 1337269593002567556}
+  - component: {fileID: 1855870888358390832}
   m_Layer: 5
   m_Name: Title (TMP)
   m_TagString: Untagged
@@ -4974,6 +5267,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1855870888358390832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634037703032896119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_lusofona
 --- !u!1 &7952361508748604954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5574,6 +5880,7 @@ GameObject:
   - component: {fileID: 4950019177086485031}
   - component: {fileID: 6161320950918069287}
   - component: {fileID: 1640348190114028217}
+  - component: {fileID: 1263454142460003321}
   m_Layer: 5
   m_Name: Affiliated (TMP)
   m_TagString: Untagged
@@ -5699,3 +6006,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1263454142460003321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9121558285187003561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f430601820d06b74b9989824ef34b4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationKey: credits_affiliated
