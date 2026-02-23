@@ -10390,6 +10390,7 @@ MonoBehaviour:
   blockedSource: {fileID: 1884862301}
   blockedClip:
   - {fileID: 8300000, guid: 156d2fcc333e7f747b39616be534c172, type: 3}
+  cheats: 1
 --- !u!61 &1884862299
 BoxCollider2D:
   m_ObjectHideFlags: 0
