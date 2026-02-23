@@ -425,7 +425,7 @@ public class Settings : MonoBehaviour
         }
         else
         {
-            languageDropdown.value = 1; // Set default value to English (index 1)
+            languageDropdown.value = 0; // Set default value to English (index 1)
 
             ChangeLanguage(0);// Set default language to English (index 1)
         }

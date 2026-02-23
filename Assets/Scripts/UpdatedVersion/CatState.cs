@@ -29,6 +29,8 @@ public class CatState : MonoBehaviour
     [SerializeField] private AudioSource blockedSource;
     [SerializeField] private AudioClip[] blockedClip;
 
+    [SerializeField] private bool cheats = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,7 +108,11 @@ public class CatState : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.LeftShift)  && Input.GetKeyDown(KeyCode.G))
+
+        if (!cheats)
+            return;
+
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.G))
         {
             ResetGlossary();
         }
@@ -116,7 +122,7 @@ public class CatState : MonoBehaviour
             UnlockAllWords();
         }
 
-        if(Input.GetKeyDown(KeyCode.F10))
+        if (Input.GetKeyDown(KeyCode.F10))
         {
             ToggleUI();
         }
@@ -171,7 +177,7 @@ public class CatState : MonoBehaviour
 
         foreach (Canvas c in canvas)
         {
-            if(c.gameObject.activeSelf)
+            if (c.gameObject.activeSelf)
                 c.enabled = uiOn;
         }
 
@@ -189,7 +195,7 @@ public class CatState : MonoBehaviour
         }
     }
 
-  
+
 
 
     public void CheckInput(string input)
@@ -202,54 +208,59 @@ public class CatState : MonoBehaviour
 
         Debug.Log("Normalized input: " + normalizedInput);
 
-
-        if (normalizedInput.Equals("hub", StringComparison.OrdinalIgnoreCase))
+        if (cheats)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
-        }
 
-        if (normalizedInput.Equals("levelone", StringComparison.OrdinalIgnoreCase))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter1");
-            ResetGlossary();
-            UnlockAction(ActionWord.sleep);
-            Settings.UpdateUnlockedWordsDisplayGlobal();
-        }
 
-        if (normalizedInput.Equals("leveltwo", StringComparison.OrdinalIgnoreCase))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter2");
-            ResetGlossary();
-            UnlockAction(ActionWord.sleep);
-            UnlockAction(ActionWord.scratch);
-            Settings.UpdateUnlockedWordsDisplayGlobal();
-        }
+            if (normalizedInput.Equals("hub", StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            }
 
-        if (normalizedInput.Equals("levelthree", StringComparison.OrdinalIgnoreCase))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
-            ResetGlossary();
-            UnlockAction(ActionWord.sleep);
-            UnlockAction(ActionWord.scratch);
-            UnlockAction(ActionWord.jump);
-            Settings.UpdateUnlockedWordsDisplayGlobal();
-        }
+            if (normalizedInput.Equals("levelone", StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter1");
+                ResetGlossary();
+                UnlockAction(ActionWord.sleep);
+                Settings.UpdateUnlockedWordsDisplayGlobal();
+            }
 
-        if (normalizedInput.Equals("levelthreefinal", StringComparison.OrdinalIgnoreCase))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
-            Settings.instance.jumpToFinal = true;
-            ResetGlossary();
-            UnlockAction(ActionWord.sleep);
-            UnlockAction(ActionWord.scratch);
-            UnlockAction(ActionWord.jump);
-            UnlockAction(ActionWord.meow);
-            Settings.UpdateUnlockedWordsDisplayGlobal();
+            if (normalizedInput.Equals("leveltwo", StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter2");
+                ResetGlossary();
+                UnlockAction(ActionWord.sleep);
+                UnlockAction(ActionWord.scratch);
+                Settings.UpdateUnlockedWordsDisplayGlobal();
+            }
+
+            if (normalizedInput.Equals("levelthree", StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
+                ResetGlossary();
+                UnlockAction(ActionWord.sleep);
+                UnlockAction(ActionWord.scratch);
+                UnlockAction(ActionWord.jump);
+                Settings.UpdateUnlockedWordsDisplayGlobal();
+            }
+
+            if (normalizedInput.Equals("levelthreefinal", StringComparison.OrdinalIgnoreCase))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Chapter3");
+                Settings.instance.jumpToFinal = true;
+                ResetGlossary();
+                UnlockAction(ActionWord.sleep);
+                UnlockAction(ActionWord.scratch);
+                UnlockAction(ActionWord.jump);
+                UnlockAction(ActionWord.meow);
+                Settings.UpdateUnlockedWordsDisplayGlobal();
+            }
+
         }
 
         if (normalizedInput.Equals(Settings.GetText("pause"), StringComparison.OrdinalIgnoreCase))
         {
-           Debug.Log("Pause command received.");
+            Debug.Log("Pause command received.");
             FindAnyObjectByType<Settings>().ToggleMenu();
             return;
         }
@@ -292,12 +303,12 @@ public class CatState : MonoBehaviour
                     return;
                 }
 
-                if(confused.activeSelf)
+                if (confused.activeSelf)
                 {
                     confused.SetActive(false);
                 }
 
-                if(blocked.activeSelf)
+                if (blocked.activeSelf)
                 {
                     blocked.SetActive(false);
                 }
@@ -315,7 +326,7 @@ public class CatState : MonoBehaviour
     private IEnumerator TurnOnObjectTimer(GameObject targetObject, float duration)
     {
         targetObject.SetActive(true);
-        
+
         blockedSource.clip = blockedClip[UnityEngine.Random.Range(0, blockedClip.Length)];
         blockedSource.Play();
 
@@ -340,7 +351,7 @@ public class CatState : MonoBehaviour
         bool deactivatedActions = false;
         moving = true;
 
-        action.onActivate.Invoke();    
+        action.onActivate.Invoke();
 
         for (int i = 0; i < action.path.Length; i++)
         {
@@ -383,7 +394,7 @@ public class CatState : MonoBehaviour
 
             // Reset rotation back to neutral
 
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
             // --- Invoke UnityEvent ---
             if (point.hasEvent && point.onReachPoint != null)
