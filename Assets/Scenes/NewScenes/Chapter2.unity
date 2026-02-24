@@ -9751,7 +9751,7 @@ AudioSource:
   m_GameObject: {fileID: 1054136147}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   m_audioClip: {fileID: 8300000, guid: 192e1a8b061622e4db6c3aedb9ba3ff5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -15973,7 +15973,7 @@ MonoBehaviour:
   blockedSource: {fileID: 1884862301}
   blockedClip:
   - {fileID: 8300000, guid: 156d2fcc333e7f747b39616be534c172, type: 3}
-  cheats: 0
+  cheats: 1
 --- !u!61 &1884862299
 BoxCollider2D:
   m_ObjectHideFlags: 0

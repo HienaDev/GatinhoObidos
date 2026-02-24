@@ -1705,7 +1705,7 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound: []
   clickSound: []
 --- !u!114 &5290497234588291078
@@ -3158,7 +3158,7 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound: []
   clickSound: []
 --- !u!1 &3765868364501444319
@@ -6629,7 +6629,7 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound: []
   clickSound: []
 --- !u!114 &8240962306522155240
@@ -9387,7 +9387,7 @@ MonoBehaviour:
   exitDistance: 20
   animationTime: 0.2
   easeType: 27
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24300002, guid: f4c53021ef260c54e9b4f6dcd0d26b7e, type: 2}
   hoverSound: []
   clickSound: []
 --- !u!114 &2129462583905279576
